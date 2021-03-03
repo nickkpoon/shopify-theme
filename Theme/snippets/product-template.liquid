@@ -1,0 +1,362 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+
+  unless thumbnail_position
+    assign thumbnail_position = 'beside'
+  endunless
+
+  unless description_style
+    assign description_style = 'full'
+  endunless
+
+  assign product_zoom_size = '1800x1800'
+  assign product_image_size = '620x'
+
+  case image_container_width
+    when 'small'
+      assign product_image_width = 'medium-up--two-fifths'
+      assign product_description_width = 'medium-up--three-fifths'
+      assign product_image_size = '480x'
+    when 'medium'
+      assign product_image_width = 'medium-up--one-half'
+      assign product_description_width = 'medium-up--one-half'
+      assign product_image_size = '620x'
+    when 'large'
+      assign product_image_width = 'medium-up--three-fifths'
+      assign product_description_width = 'medium-up--two-fifths'
+      assign product_image_size = '740x'
+  endcase
+
+  assign product_img_structure = product.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+-%}
+
+<div id="ProductSection-{{ section_id }}"
+  class="product-section"
+  data-section-id="{{ section_id }}"
+  data-section-type="product-template"
+  data-product-handle="{{ product.handle }}"
+  data-product-title="{{ product.title | escape }}"
+  data-product-url="{{ product.url | within: collection }}"
+  data-aspect-ratio="{{ 100 | divided_by: product.featured_media.aspect_ratio }}"
+  data-img-url="{{ product_img_structure }}"
+  data-image-zoom="true"
+  {% if settings.inventory_enable %}
+    data-inventory="true"
+  {% endif %}
+  {% if settings.inventory_transfers_enable %}
+    data-incoming-inventory="true"
+  {% endif %}
+  {% unless isModal %}
+    data-enable-history-state="true"
+  {% endunless %}>
+
+  {%- render 'product-template-variables', product: product, current_variant: current_variant -%}
+
+  <div class="page-content page-content--product">
+    <div class="page-width">
+
+      <div class="grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}">
+        {%- if image_position == 'left' -%}
+          <div class="grid__item {{ product_image_width }}">
+            {%- render 'product-images',
+              section_id: section_id,
+              product: product,
+              isModal: isModal,
+              image_position: image_position,
+              product_zoom_size: product_zoom_size,
+              product_image_size: product_image_size,
+              thumbnail_arrows: thumbnail_arrows,
+              thumbnail_position: thumbnail_position,
+              video_looping: video_looping,
+              video_style: video_style
+            -%}
+          </div>
+        {%- endif -%}
+
+        <div class="grid__item {{ product_description_width }} product-meta-outer">
+
+          <div class="product-single__meta">
+            {%- if settings.show_breadcrumbs and isModal != true -%}
+              {%- render 'breadcrumbs' -%}
+            {%- endif -%}
+
+
+            <div class="product-details grid--no-gutters">
+
+            <div class="product-top-container">
+              <div class="row">
+              {%- if isModal -%}
+                <p class="h2 product-single__title">
+                  {{ product.title }}
+                </p>
+              {%- else -%}
+                <h1 class="h2 product-single__title">
+                  {{ product.title }}
+                </h1>
+              {%- endif -%}
+              </div>
+
+
+              <div class="row">
+                <!-- fields [tls 10/19] -->
+                <div class="grid__item medium-up--one-half">
+                  <label>Maker</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half text-right">
+                  {%- assign vendor_handle = product.vendor | handleize  -%}
+                  {%- if collections[vendor_handle] != empty -%}
+
+                  <label>
+                  <a href="{{ routes.collections_url }}/{{ collections[vendor_handle].handle }}">
+                    {{ collections[vendor_handle].title }}
+                    </a></label>
+
+                  {%- else -%}
+                  <label>{{ product.vendor | link_to_vendor }}</label>
+                  {%- endif -%}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="grid__item medium-up--one-half">
+                  <label>Location</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half  text-right">
+                  <label>{{ product.metafields.global.Product_City }}, {{ product.metafields.global.Product_Country }}</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="grid__item medium-up--one-half">
+                  <label>Material</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half  text-right">
+                  <label>{{ product.metafields.global.Product_Material }}</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="grid__item one-third">
+                  <label>Dimensions</label>
+                </div>
+
+                <div class="grid__item two-third  text-right">
+                  <label>{{ product.metafields.global.Product_Dimensions }}</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="grid__item medium-up--one-half">
+                  <label>Weight</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half  text-right">
+                  <label>{{ product.metafields.global.Product_Weight }}</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-bottom-container">
+
+            <!-- Form [tls 10/20] -->
+            {%- unless isModal -%}
+
+              {%- render 'product-form',
+                section_id: section_id,
+                product: product,
+                current_variant: current_variant
+              -%}
+
+            {%- else -%}
+              <div
+                id="ProductFormHolder-{{ section_id }}"
+                class="product-form-holder"
+                data-url="{{ product.url }}"
+                data-template="{{ product.template_suffix }}"></div>
+            {%- endunless -%}
+            <!-- Form -->
+
+
+            <!-- Commissions Request -->
+            <div class="shipping-product-info">
+              {%- if product.available != true -%}
+                <div class="soldout-contact-container">
+                <p>Sign up to get notified if a similar piece becomes available.</p>
+                {% render 'notified-form' %}
+                </div>
+              {%- else -%}
+                <p>Free shipping on orders over $150. <a href="#" class="accent-text shipping__btn js-modal-open-shipping-modal-{{ product.id }}" data-product-id="{{ product.id }}">See details.</a></p>
+             {%- endif -%}
+            </div>
+            </div>
+
+
+             {%- render 'contactus-popup', product: product -%}
+             {%- render 'shippingdetails-popup', product: product -%}
+
+             {%- render 'product-additional-content' -%}
+
+
+            {%- if settings.enable_product_reviews and settings.reviews_layout == 'full' -%}
+              {%- liquid
+                if isModal
+                  assign review_link = product.url | within: collection | append: '#Reviews-' | append: product.id
+                else
+                  assign review_link = '#Reviews-' | append: product.id
+                endif
+              -%}
+              <a href="{{ review_link }}" class="product-single__review-link">
+                <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+              </a>
+            {%- endif -%}
+
+            {%- if settings.sku_enable -%}
+              <p id="Sku-{{ section_id }}" class="product-single__sku">
+                {%- if current_variant.sku -%}
+                  {{ current_variant.sku }}
+                {%- endif -%}
+              </p>
+            {%- endif -%}
+
+            {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+              <div class="product__policies rte small--text-center">
+                <small>
+                  {%- if shop.taxes_included -%}
+                    {{ 'products.product.include_taxes' | t }}
+                  {%- endif -%}
+                  {%- if shop.shipping_policy.body != blank -%}
+                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- endif -%}
+                </small>
+              </div>
+            {%- endif -%}
+
+            {%- if settings.inventory_enable or settings.inventory_transfers_enable -%}
+              {%- assign variants_with_inventory_tracking = product.variants | where: 'inventory_management', 'shopify' -%}
+
+              <script>
+                // Store inventory quantities in JS because they're no longer
+                // available directly in JS when a variant changes.
+                // Have an object that holds all potential products so it works
+                // with quick view or with multiple featured products.
+                window.inventories = window.inventories || {};
+                window.inventories['{{section_id}}'] = {};
+                 {% for variant in variants_with_inventory_tracking %}
+                  window.inventories['{{section_id}}'][{{variant.id}}] = {
+                    'quantity': {{ variant.inventory_quantity | default: 0 }},
+                    'incoming': {{ variant.incoming | default: false | json }},
+                    'next_incoming_date': {{ variant.next_incoming_date | date: format: 'date' | json }}
+                  };
+                 {% endfor %}
+              </script>
+
+              {% comment %}
+                If loaded in quick view, it might be from a JS-loaded function
+                that loads recommended products. If that's the case, the above
+                JS will not set the variant inventory. Add it to an accessible
+                data div to read later instead.
+              {% endcomment %}
+              {%- if isModal -%}
+                <div
+                  data-section-id="{{ section_id }}"
+                  class="hide js-product-inventory-data"
+                  aria-hidden="true"
+                  >
+                  {%- for variant in variants_with_inventory_tracking -%}
+                    <div
+                      class="js-variant-inventory-data"
+                      data-id="{{ variant.id }}"
+                      data-quantity="{{ variant.inventory_quantity | default: 0 }}"
+                      data-incoming="{{ variant.incoming | default: false | json }}"
+                      data-date="{{ variant.next_incoming_date | date: format: 'date' | json }}"
+                    >
+                    </div>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+
+            {%- unless isModal -%}
+              <div id="StoreAvailabilityHolder-{{ section_id }}"></div>
+            {%- endunless -%}
+
+            {%- if settings.trust_image != blank -%}
+              <div class="aos-animate trust-image" style="max-width: {{ settings.trust_image.width }}px;">
+                <div class="image-wrap " style="height: 0; padding-bottom: {{ 100 | divided_by: settings.trust_image.aspect_ratio }}%;">
+                  {%- assign img_url = settings.trust_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  <img class="lazyload"
+                      data-src="{{ img_url }}"
+                      data-widths="[360, 540]"
+                      data-aspectratio="{{ settings.trust_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ settings.trust_image.alt }}">
+                  <noscript>
+                    <img class="lazyloaded" src="{{ settings.trust_image | img_url: '540x' }}" alt="{{ settings.trust_image.alt }}">
+                  </noscript>
+                </div>
+              </div>
+            {%- endif -%}
+
+            {%- if social -%}
+              {%- render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product -%}
+            {%- endif -%}
+
+            </div>
+          </div>
+        </div><!-- End description -->
+
+        {%- unless image_position == 'left' -%}
+          <div class="grid__item {{ product_image_width }}">
+            {%- render 'product-images',
+              section_id: section_id,
+              product: product,
+              isModal: isModal,
+              image_position: image_position,
+              product_zoom_size: product_zoom_size,
+              product_image_size: product_image_size,
+              thumbnail_arrows: thumbnail_arrows,
+              thumbnail_position: thumbnail_position,
+              video_looping: video_looping,
+              video_style: video_style
+            -%}
+          </div>
+        {%- endunless -%}
+      </div>
+
+
+
+
+
+        <div >
+
+
+        <div class="grid__item">
+
+          <div class="product-single__description-full rte">
+          {{ product.description }}
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        {%- render 'product-block-featured-collection' -%}
+
+
+        </div>
+
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+ {%- render 'product-block-image-hero' -%}

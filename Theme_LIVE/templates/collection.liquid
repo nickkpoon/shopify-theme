@@ -1,0 +1,41 @@
+<div class="page-width page-content page-content--top">
+  <header class="section-header section-header--flush">
+    {%- render 'breadcrumbs' -%}
+    <h1 class="h2 section-header__title text-left">
+      Shop our one-of-a-kind pieces, <br />
+      straight from studios of master artisans around the world
+    </h1>
+  </header>
+</div>
+
+<div id="CollectionAjaxResult" class="collection-content">
+  <div id="CollectionAjaxContent">
+    <div class="page-width">
+      <div class="grid">
+        <div class="grid__item medium-up--one-fifth grid__item--sidebar">
+          {% section 'collection-sidebar' %}
+        </div>
+        <div class="grid__item medium-up--four-fifths grid__item--content">
+          <div class="collection-grid__wrapper">
+            {% section 'collection-template' %}
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-grid__item">
+        <hr class="hr--small-top" />
+      </div>
+      <h4 class="h4 section-header__title text-center contact-commission">
+        Commissions available upon request.
+        <a alt="email us here" href="/pages/contact-us"
+          class="accent-text contactus__btn ">Contact Us.</a
+        >
+      </h4>
+      <div class="flex-grid__item">
+        <hr class="hr--small-top" />
+      </div>
+
+
+    </div>
+  </div>
+</div>

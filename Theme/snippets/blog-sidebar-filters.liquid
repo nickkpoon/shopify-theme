@@ -1,0 +1,27 @@
+<div class="collection-sidebar__group">
+
+  <div id="{{ location }}-{{ forloop.index }}">
+
+      <ul class="no-bullets tag-list">
+        {%- for link in linklists[section.settings.blog_links].links -%}
+        <li {% if link.current %}class="tag--active"{% endif %}>
+          <a href="{{ link.url }}" class="no-ajax">
+            {{ link.title }}
+          </a>
+          {%- if link.links -%}
+          <ul class="no-bullets tag-list">
+            {%- for childlink in link.links -%}
+            <li{% if childlink.current %} class="tag--active"{% endif %}>
+              <a href="{{ childlink.url }}" class="no-ajax">
+                {{ childlink.title }}
+              </a>
+            </li>
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+
+</div>

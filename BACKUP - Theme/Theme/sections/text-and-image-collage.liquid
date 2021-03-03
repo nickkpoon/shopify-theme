@@ -1,0 +1,208 @@
+<div class="page-width">
+
+  {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+  {%- capture image_layout -%}
+    <div class="feature-row__item feature-row__collage small--hide">
+      <div class="feature-row__collage_image collage-image-2 small--hide">
+        <div class="" style="max-width: {{ section.settings.image_width2 }}px;">
+            <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image2.aspect_ratio }}%;">
+              {%- assign img_url2 = section.settings.image2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+              <img class="lazyload"
+                  data-src="{{ img_url2 }}"
+                  data-widths="[180, 360, 540, 720]"
+                  data-aspectratio="{{ section.settings.image2.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ section.settings.image2.alt }}">
+            </div>
+        </div>
+      </div>
+
+      <div class="feature-row__collage_image collage-image-1 small--hide">
+        <div class="" style="max-width: {{ section.settings.image_width1 }}px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image1.aspect_ratio }}%;">
+            {%- assign img_url1 = section.settings.image1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="lazyload"
+                data-src="{{ img_url1 }}"
+                data-widths="[180, 360, 540, 720]"
+                data-aspectratio="{{ section.settings.image1.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ section.settings.image1.alt }}">
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row__collage_image collage-image-3 small--hide">
+        <div class="" style="max-width: 367px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image3.aspect_ratio }}%;">
+            {%- assign img_url3 = section.settings.image3 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <video
+              playsinline
+              loop
+              muted
+              controlsList="nodownload"
+              autoplay
+              style="max-width: 437px;"
+              src="https://cdn.shopify.com/s/files/1/0499/7916/2781/files/abigail.mp4?v=1605157552"
+              >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row__collage_image collage-image-4 small--hide">
+        <div class="" style="max-width: {{ section.settings.image_width4 }}px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image4.aspect_ratio }}%;">
+            {%- assign img_url4 = section.settings.image4 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="lazyload"
+                data-src="{{ img_url4 }}"
+                data-widths="[180, 360, 540, 720]"
+                data-aspectratio="{{ section.settings.image4.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ section.settings.image4.alt }}">
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endcapture -%}
+
+  <div class="feature-row feature-row-collage" data-aos>
+
+    <div class="feature-row__item feature-row__text">
+
+      {%- if section.settings.title != blank -%}
+        <p class="h2 medium--hide small--hide">{{ section.settings.title | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.mobile_title != blank -%}
+        <p class="h2 medium-up--hide">{{ section.settings.mobile_title | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+      {%- endif -%}
+
+      <div class="feature-row__collage_image medium--hide medium-up--hide">
+        <div class="" style="max-width: {{ section.settings.image_width1 }}px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image1.aspect_ratio }}%;">
+            {%- assign img_url1 = section.settings.image1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="lazyload"
+                data-src="{{ img_url1 }}"
+                data-widths="[180, 360, 540, 720]"
+                data-aspectratio="{{ section.settings.image1.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ section.settings.image1.alt }}">
+          </div>
+        </div>
+      </div>
+
+      {%- render 'nominate-form', section_id: section.id, snippet_context: 'section' -%}
+    </div>
+
+
+      {{ image_layout }}
+
+  </div>
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Collage with text",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Image 1"
+      },
+	  {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "image3",
+        "label": "Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "image4",
+        "label": "Image 4"
+      },
+      {
+        "type": "range",
+        "id": "image_width1",
+        "label": "Image width 1",
+        "default": 500,
+        "min": 100,
+        "max": 580,
+        "step": 10,
+        "unit": "px"
+      },
+	  {
+        "type": "range",
+        "id": "image_width2",
+        "label": "Image width 2",
+        "default": 500,
+        "min": 100,
+        "max": 580,
+        "step": 10,
+        "unit": "px"
+      },
+	  {
+        "type": "range",
+        "id": "image_width3",
+        "label": "Image width 3",
+        "default": 500,
+        "min": 100,
+        "max": 580,
+        "step": 10,
+        "unit": "px"
+      },
+      	  {
+        "type": "range",
+        "id": "image_width4",
+        "label": "Image width 4",
+        "default": 500,
+        "min": 100,
+        "max": 580,
+        "step": 10,
+        "unit": "px"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_title",
+        "label": "Mobile Title",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collage with text",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
