@@ -1999,7 +1999,14 @@ lazySizesConfig.expFactor = 4;
         // Add open transition class after element is set to fixed
         // so CSS animation is applied correctly
         setTimeout(function() {
+
           $siteHeader.addClass(config.openTransitionClass);
+
+          //custom: sidebar spacing after scroll
+          if ($('#shopify-section-blog-sidebar .tag-list a')[0]){
+            $('#shopify-section-blog-sidebar .tag-list a').css('margin-bottom', '');
+            $('#shopify-section-blog-sidebar .tag-list a').css('margin', '20px 0');
+          } 
         }, 100);
       } else {
         if (!config.stickyActive) {
@@ -2011,6 +2018,12 @@ lazySizesConfig.expFactor = 4;
         $siteHeader.removeClass(config.openTransitionClass).removeClass(config.stickyClass);
         if (config.wrapperOverlayed) {
           $wrapper.addClass(config.overlayedClass);
+        }
+
+        //custom: sidebar spacing after scroll up
+        if ($('#shopify-section-blog-sidebar .tag-list a')[0]){
+          $('#shopify-section-blog-sidebar .tag-list a').css('margin', '');
+          $('#shopify-section-blog-sidebar .tag-list a').css('margin-bottom', '20px');
         }
       }
   
