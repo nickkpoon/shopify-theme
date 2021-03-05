@@ -6698,5 +6698,9 @@ lazySizesConfig.expFactor = 4;
     sections.register('footer-section', theme.FooterSection);
 
     theme.initSecondary();
+
+    $( ".slick-list" ).each(function( index ) {
+      $(this).attr('id', 'slick-list' + index);
+    });
   });
 })(theme.jQuery);
