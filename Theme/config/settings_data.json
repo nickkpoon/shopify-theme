@@ -557,7 +557,7 @@
             "settings": {
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/Rectangle_32_a799a991-a0e8-4b30-aa4b-7e18aab75c1c.png",
-              "image_width": 650,
+              "image_width": 770,
               "title": "Tom Henscheid: The Artful Craftsman Who Solves the Impossible",
               "reduce_font": true,
               "text": "",
@@ -573,7 +573,7 @@
             "settings": {
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/ab-story-placeholder.png",
-              "image_width": 650,
+              "image_width": 770,
               "title": "Imprint Presents: The Wrangle with Abigail Schama",
               "reduce_font": true,
               "text": "",
