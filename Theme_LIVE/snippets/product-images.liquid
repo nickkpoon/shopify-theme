@@ -84,6 +84,8 @@
                   <img class="animation-delay-{{ forloop.index | times: 3 }} lazyload"
                       data-src="{{ img_url }}"
                       data-widths="[360, 540, 720, 900, 1080]"
+                      width="360"
+                      height="{{ 360 | divided_by: preview_image.aspect_ratio }}"
                       data-aspectratio="{{ media.preview_image.aspect_ratio }}"
                       data-sizes="auto"
                       alt="{{ media.alt | escape }}">
