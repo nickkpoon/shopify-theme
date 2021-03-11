@@ -77,10 +77,13 @@
             <img class="grid-product__image lazyload"
                 data-src="{{ img_url }}"
                 data-widths="[180, 360, 540, 720, 900, 1080]"
+                width=180
+                height=180
                 width="540"
                 height="{{ 540 | divided_by: preview_image.aspect_ratio }}"
                 data-aspectratio="{{ preview_image.aspect_ratio }}"
                 data-sizes="auto"
+                style="height: auto; width: 100%;"
                 alt="{{ preview_image.alt | escape }}">
             <noscript>
               <img class="grid-product__image lazyloaded"
