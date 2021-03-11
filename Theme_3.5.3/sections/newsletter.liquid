@@ -1,0 +1,53 @@
+
+<div class="newsletter-section newsletter-{{ section.id }}">
+
+  <div class="page-width">
+    <div class="section--divider">
+      <div class="grid">
+
+    <div class="grid__item medium-up--one-half">
+    {%- if section.settings.title != blank -%}
+      <p class="h2 small--text-center">{{ section.settings.title | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+    </div>
+    <div class="grid__item medium-up--one-half text-right">
+    	{%- render 'newsletter-form', section_id: section.id, snippet_context: 'section' -%}
+    </div>
+    </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Customers who subscribe will have their email address added to the 'accepts marketing' [customer list](/admin/customers?query=&accepts_marketing=1)."
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Sign up and save"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Subheading",
+        "default": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Newsletter",
+        "category": "Promotional"
+      }
+    ]
+  }
+{% endschema %}
