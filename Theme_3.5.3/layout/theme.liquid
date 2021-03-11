@@ -24,153 +24,9 @@
     {%- endif -%} {%- render 'seo-title' -%} {%- if page_description -%}
     <meta name="description" content="{{ page_description | escape }}" />
     {%- endif -%} {%- render 'social-meta-tags' -%} {%- render 'font-face' -%}
-    <style>
-      *,:after,:before,input{
-        box-sizing:border-box;
-      }
-
-      body,html{
-        padding:0;
-        margin:0;
-
-      }
-
-      article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{
-        display:block;
-      }
-
-      audio,canvas,progress,video{
-        display:inline-block;
-        vertical-align:baseline;
-      }
-
-      input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
-        height:auto;
-      }
-
-      input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{
-        -webkit-appearance:none;
-      }
-
-      .grid:after{content:"";display:table;clear:both;}
-
-      .grid{
-        list-style:none;
-        margin:0;
-        padding:0;
-        margin-left:-22px
-      }
-
-      @media only screen and (max-width:768px){
-
-      .grid{
-          margin-left:-17px
-      }
-        }
-
-      .grid--small{
-        margin-left:-10px
-      }
-
-      .grid--small .grid__item{
-          padding-left:10px;
-        }
-
-      .grid__item{
-        float:left;
-        padding-left:22px;
-        width:100%;
-        min-height:1px
-      }
-
-      @media only screen and (max-width:768px){
-
-      .grid__item{
-          padding-left:17px
-      }
-        }
-
-      .grid__item[class*="--push"]{
-          position:relative;
-        }
-
-      .grid--no-gutters{
-        margin-left:0
-      }
-
-      .grid--no-gutters .grid__item{
-          padding-left:0;
-        }
-
-      .grid--small-gutters{
-        margin-left:-10px;
-        margin-bottom:-10px
-      }
-
-      .grid--small-gutters .grid__item{
-          padding-left:10px;
-          padding-bottom:10px;
-        }
-
-      .grid--flush-bottom{
-        margin-bottom:-22px;
-        overflow:auto
-      }
-
-      .grid--flush-bottom>.grid__item{
-          margin-bottom:22px;
-        }
-
-      .grid--center{
-        text-align:center
-      }
-
-      .grid--center .grid__item{
-          float:none;
-          display:inline-block;
-          vertical-align:top;
-          text-align:left;
-        }
-
-      .grid--full{
-        margin-left:0
-      }
-
-      .grid--full>.grid__item{
-          padding-left:0;
-        }
-
-      @media only screen and (min-width:769px){
-        .grid--table-large{
-          display:table;
-          width:100%;
-          table-layout:fixed
-        }
-
-          .grid--table-large>.grid__item{
-            display:table-cell;
-            vertical-align:middle;
-            float:none;
-          }
-      }
-
-      @media only screen and (max-width:768px){
-        .small--grid--flush{
-          margin-left:-2px
-        }
-        .page-width .small--grid--flush{
-            margin-left:-15px;
-            margin-right:-17px
-        }
-
-          .small--grid--flush>.grid__item{
-            padding-left:2px;
-          }
-      }
-    </style>
-    <link rel="preload" href="{{"theme.css" | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="{{"theme.css" | asset_url }}"></noscript>
-
+    {{
+      "theme.css" | asset_url | stylesheet_tag
+    }}
     {%- render 'css-variables' -%}
 
     <script>
@@ -215,7 +71,7 @@
 
     <script
       src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}"
-      async
+      defer="defer"
     ></script>
 
     {%- if shop.enabled_currencies.size > 1 -%}

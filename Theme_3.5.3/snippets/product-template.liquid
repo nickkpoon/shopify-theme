@@ -39,9 +39,7 @@
   data-product-url="{{ product.url | within: collection }}"
   data-aspect-ratio="{{ 100 | divided_by: product.featured_media.aspect_ratio }}"
   data-img-url="{{ product_img_structure }}"
-  {% if settings.product_zoom_enable %}
-    data-image-zoom="true"
-  {% endif %}
+  data-image-zoom="true"
   {% if settings.inventory_enable %}
     data-inventory="true"
   {% endif %}
@@ -143,11 +141,11 @@
 
 
               <div class="row">
-                <div class="grid__item medium-up--one-half">
+                <div class="grid__item one-third">
                   <label>Dimensions</label>
                 </div>
 
-                <div class="grid__item medium-up--one-half  text-right">
+                <div class="grid__item two-third  text-right">
                   <label>{{ product.metafields.global.Product_Dimensions }}</label>
                 </div>
               </div>

@@ -2002,12 +2002,13 @@ lazySizesConfig.expFactor = 4;
 
           $siteHeader.addClass(config.openTransitionClass);
 
-          //custom: sidebar spacing after scroll
+          //custom: sidebar spacing after scroll down
           if ($('#shopify-section-blog-sidebar .tag-list a')[0]){
             $('#shopify-section-blog-sidebar .tag-list a').css('margin-bottom', '');
             $('#shopify-section-blog-sidebar .tag-list a').css('margin', '20px 0');
           } 
         }, 100);
+
       } else {
         if (!config.stickyActive) {
           return;
@@ -6697,7 +6698,7 @@ lazySizesConfig.expFactor = 4;
     sections.register('footer-section', theme.FooterSection);
 
     theme.initSecondary();
-    
+
     $( ".slick-list" ).each(function( index ) {
       $(this).attr('id', 'slick-list' + index);
     });
