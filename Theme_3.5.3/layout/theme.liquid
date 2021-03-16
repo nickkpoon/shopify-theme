@@ -14,13 +14,9 @@
     <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
     <link rel="dns-prefetch" href="https://maps.googleapis.com" />
     <link rel="dns-prefetch" href="https://maps.gstatic.com" />
-    <noscript>
-
-    <link href="mobile.css" rel="stylesheet" media="(max-width: 768)">
-    <link href="desktop.css" rel="stylesheet" media="(min-width: 769)">
-
-    </noscript>
-
+    <link href="{{"mobile.css" | asset_url}}" rel="stylesheet" media="(max-width: 768px)" onload="if(media!='all')media='all'"/>
+    <link href="{{"desktop.css" | asset_url}}" rel="stylesheet" media="(min-width: 769px)" onload="if(media!='all')media='all'"/>
+    
     {%- if settings.favicon != blank -%}
     <link
       rel="shortcut icon"
@@ -188,5 +184,6 @@
     'predictive-template' -%} {%- endif -%} {%- render 'video-modal' -%} {%-
     render 'photoswipe-template' -%} {%- if template contains 'product' -%} {%-
     render 'recently-viewed-product-template' -%} {%- endif -%}
+
   </body>
 </html>
