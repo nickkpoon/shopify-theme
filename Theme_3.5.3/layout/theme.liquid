@@ -14,9 +14,7 @@
     <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
     <link rel="dns-prefetch" href="https://maps.googleapis.com" />
     <link rel="dns-prefetch" href="https://maps.gstatic.com" />
-    <link href="{{"mobile.css" | asset_url}}" rel="stylesheet" media="(max-width: 768px)" onload="if(media!='all')media='all'"/>
-    <link href="{{"desktop.css" | asset_url}}" rel="stylesheet" media="(min-width: 769px)" onload="if(media!='all')media='all'"/>
-    
+  
     {%- if settings.favicon != blank -%}
     <link
       rel="shortcut icon"
@@ -33,6 +31,9 @@
     {{
       "theme.css" | asset_url | stylesheet_tag
     }}
+
+    <link href="{{"mobile.css" | asset_url}}" rel="stylesheet" media="(max-width: 768px)" onload="if(media!='all')media='all'"/>
+    <link href="{{"desktop.css" | asset_url}}" rel="stylesheet" media="(min-width: 769px)" onload="if(media!='all')media='all'"/>
     {%- render 'css-variables' -%}
 
     <script>
@@ -77,7 +78,7 @@
 
     <script
       src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}"
-      defer="defer"
+      defer
     ></script>
 
     {%- if shop.enabled_currencies.size > 1 -%}
@@ -92,12 +93,12 @@
     /></noscript>
     {%- endif -%}
 
-    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
 
     {%- if request.page_type contains 'customers/' -%}
     <script
       src="{{ 'shopify_common.js' | shopify_asset_url }}"
-      defer="defer"
+      defer
     ></script>
     {%- endif -%}
   </head>
