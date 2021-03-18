@@ -103,17 +103,13 @@
 
     {%- if section.settings.show_copyright -%}
       <p class="footer__small-text">
-        
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}
         {%- if section.settings.copyright_text != blank -%}
-        {{ section.settings.copyright_text }}
+          {{ section.settings.copyright_text }}
         {%- endif -%}
-        
-        {%- for link in linklists[section.settings.copyright_menu].links -%}
-           <span>|</span><a href="{{ link.url }}">{{ link.title }}</a>
-        {% endfor %}
       </p>
     {%- endif -%}
-    
+    <p class="footer__small-text">{{ powered_by_link }}</p>
 
   </div>
 </footer>
@@ -170,12 +166,6 @@
         "type": "text",
         "id": "copyright_text",
         "label": "Additional copyright text"
-      },
-      {
-            "type": "link_list",
-            "id": "copyright_menu",
-            "label": "Choose a copyright menu",
-            "default": "footer"
       }
     ],
     "blocks": [

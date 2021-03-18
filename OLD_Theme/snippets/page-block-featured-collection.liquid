@@ -5,40 +5,24 @@
 -%}
 
 <div class="index-section">
-  
-  
   <div
     id="CollectionSection-{{ block.id }}"
     data-section-id="{{ block.id }}"
     data-section-type="collection-template">
     {%- if block.settings.title != blank -%}
       <div class="page-width">
-        
-        {%- if block.settings.divider -%}<div class="section--divider">{%- endif -%}
-        
         <div class="section-header{% if block.settings.view_all %}{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}{% endif %}">
           <h2 class="section-header__title">
             {{ block.settings.title }}
           </h2>
-          
-          {%- if block.settings.subtitle != blank -%}
-            <p class="text-center">{{ block.settings.subtitle }}</p>
-          {%- endif -%}
-          
-          
           {%- if block.settings.view_all and block.settings.rows == 1 -%}
             <a href="{{ collections[block.settings.collection].url }}" class="btn btn--secondary btn--small section-header__link">{{ 'collections.general.all_of_collection' | t }}</a>
           {%- endif -%}
         </div>
       </div>
     {%- endif -%}
-    
-    
 
     <div class="page-width{% if block.settings.mobile_scrollable %} page-width--flush-small{% endif %}">
-      
-      
-      
       <div{% if block.settings.mobile_scrollable %} class="grid-overflow-wrapper"{% endif %}>
         <div class="grid grid--uniform"{% if block.settings.mobile_scrollable %} data-aos="overflow__animation"{% endif %}>
           {%- liquid
@@ -115,11 +99,7 @@
         </div>
       </div>
     </div>
-    
-    
   </div>
-  
-  {%- if block.settings.divider -%}</div>{%- endif -%}
 </div>
 
 {%- liquid

@@ -1,25 +1,25 @@
+{%- style -%}
+  .newsletter-{{ section.id }} {
+    background-color: {{ section.settings.color_background }};
+    color: {{ section.settings.color_text }};
+  }
 
-<div class="newsletter-section newsletter-{{ section.id }}">
+  .newsletter-{{ section.id }} .newsletter__input::-webkit-input-placeholder { color: {{ section.settings.color_text }}; }
+  .newsletter-{{ section.id }} .newsletter__input::-moz-placeholder { color: {{ section.settings.color_text }}; }
+  .newsletter-{{ section.id }} .newsletter__input::-ms-input-placeholder { color: {{ section.settings.color_text }}; }
+{%- endstyle -%}
 
-  <div class="page-width">
-    <div class="section--divider">
-      <div class="grid">
-
-    <div class="grid__item medium-up--one-half">
+<div class="newsletter-section newsletter-{{ section.id }}{% if section.settings.color_background == settings.color_body_bg %} newsletter-section--with-divider{% endif %}">
+  <div class="page-width text-center">
     {%- if section.settings.title != blank -%}
-      <p class="h2 small--text-center">{{ section.settings.title | escape }}</p>
+      <p class="h3">{{ section.settings.title | escape }}</p>
     {%- endif -%}
     {%- if section.settings.text != blank -%}
       <div class="rte">{{ section.settings.text }}</div>
     {%- endif -%}
-    </div>
-    <div class="grid__item medium-up--one-half text-right">
-    	{%- render 'newsletter-form', section_id: section.id, snippet_context: 'section' -%}
-    </div>
-    </div>
-    </div>
-  </div>
 
+    {%- render 'newsletter-form', section_id: section.id, snippet_context: 'section' -%}
+  </div>
 </div>
 
 {% schema %}
@@ -41,6 +41,18 @@
         "id": "text",
         "label": "Subheading",
         "default": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#f9f9f9"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#1c1d1d"
       }
     ],
     "presets": [

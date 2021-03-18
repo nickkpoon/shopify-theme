@@ -16,15 +16,15 @@
   endif
 -%}
 
-{%- if settings.product_content_1 != blank or settings.product_contact or reviews_as_tab or has_custom_tabs -%}
-  <div class="collapsibles-wrapper">
+{%- if settings.product_content_1 != blank or settings.product_content_2 != blank or settings.product_content_3 != blank or settings.product_contact or reviews_as_tab or has_custom_tabs -%}
+  <div class="collapsibles-wrapper collapsibles-wrapper--border-bottom">
 
     {%- for tag in product.tags -%}
       {%- if tag contains '_tab' -%}
         {%- assign include_page_handle = tag | split: '_' -%}
         {%- assign include_page = pages[include_page_handle.last] -%}
         {%- if include_page.title != blank -%}
-          <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible--auto-height" aria-controls="Product-content-{{ include_page_handle.last }}-{{ section_id }}">
+          <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Product-content-{{ include_page_handle.last }}-{{ section_id }}">
             {{ include_page.title }}
             {%- render 'collapsible-icons' -%}
           </button>
@@ -36,17 +36,15 @@
         {%- endif -%}
       {%- endif -%}
     {%- endfor -%}
-    
-
 
     {%- if settings.product_content_1 != blank -%}
       {%- if settings.product_content_collapse_1 -%}
-        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders-top" aria-controls="Product-content-1-{{ section_id }}">
+        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-1-{{ section_id }}">
           {{ pages[settings.product_content_1].title }}
           {%- render 'collapsible-icons' -%}
         </button>
       {%- else -%}
-        <div class="label collapsible-trigger-btn">
+        <div class="label collapsible-trigger-btn collapsible-trigger-btn--borders">
           {{ pages[settings.product_content_1].title }}
         </div>
       {%- endif -%}
@@ -57,13 +55,47 @@
         </div>
       </div>
     {%- endif -%}
-    
-    <hr>
+    {%- if settings.product_content_2 != blank -%}
+      {%- if settings.product_content_collapse_2 -%}
+        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-2-{{ section_id }}">
+          {{ pages[settings.product_content_2].title }}
+          {%- render 'collapsible-icons' -%}
+        </button>
+      {%- else -%}
+        <div class="label collapsible-trigger-btn collapsible-trigger-btn--borders">
+          {{ pages[settings.product_content_2].title }}
+        </div>
+      {%- endif -%}
+
+      <div id="Product-content-2-{{ section_id }}" class="collapsible-content{% unless settings.product_content_collapse_2 %} collapsible-content--expanded{% else %} collapsible-content--all{% endunless %}">
+        <div class="collapsible-content__inner rte">
+          {{ pages[settings.product_content_2].content }}
+        </div>
+      </div>
+    {%- endif -%}
+    {%- if settings.product_content_3 != blank -%}
+      {%- if settings.product_content_collapse_3 -%}
+        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-3-{{ section_id }}">
+          {{ pages[settings.product_content_3].title }}
+          {%- render 'collapsible-icons' -%}
+        </button>
+      {%- else -%}
+        <div class="label collapsible-trigger-btn collapsible-trigger-btn--borders">
+          {{ pages[settings.product_content_3].title }}
+        </div>
+      {%- endif -%}
+
+      <div id="Product-content-3-{{ section_id }}" class="collapsible-content{% unless settings.product_content_collapse_3 %} collapsible-content--expanded{% else %} collapsible-content--all{% endunless %}">
+        <div class="collapsible-content__inner rte">
+          {{ pages[settings.product_content_3].content }}
+        </div>
+      </div>
+    {%- endif -%}
 
     {%- if settings.product_contact -%}
       {%- assign form_id = 'contact-' | append: section_id -%}
       {%- form 'contact', id: form_id  -%}
-        <button type="button" class="label collapsible-trigger collapsible-trigger-btn" aria-controls="Product-content-4-{{ section_id }}">
+        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-4-{{ section_id }}">
           {{ settings.product_contact_title }}
           {%- render 'collapsible-icons' -%}
         </button>
@@ -116,7 +148,7 @@
     {%- endif -%}
 
     {%- if reviews_as_tab -%}
-      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible--auto-height" aria-controls="Product-content-5-{{ section_id }}">
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Product-content-5-{{ section_id }}">
         <span class="shopify-product-reviews-badge" data-id="{{ product.id }}">Reviews</span>
         {%- render 'collapsible-icons' -%}
       </button>
@@ -130,4 +162,3 @@
 
   </div>
 {%- endif -%}
-

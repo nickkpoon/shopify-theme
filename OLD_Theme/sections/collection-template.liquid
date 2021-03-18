@@ -36,7 +36,11 @@
       </button>
     </div>
 
-
+    <div class="collection-filter__item collection-filter__item--count small--hide">
+      {%- if section.settings.enable_collection_count -%}
+        {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
+      {%- endif -%}
+    </div>
 
     <div class="collection-filter__item collection-filter__item--sort">
       <div class="collection-filter__sort-container">
@@ -52,7 +56,9 @@
     </div>
   </div>
 
-
+  {%- if section.settings.enable_collection_count -%}
+    <p class="medium-up--hide text-center" data-scroll-to>{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</p>
+  {%- endif -%}
 
   <div
     class="grid grid--uniform grid--collection{% if section.settings.mobile_flush_grid %} small--grid--flush{% endif %}"{% unless section.settings.enable_collection_count %} data-scroll-to{% endunless %}>
@@ -73,35 +79,6 @@
 
     {%- for product in collection.products -%}
       {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
-
-      <!-- {%- if collection.products_count > 8 and forloop.index == 6 and section.settings.per_row == 3  -%}
-        <div class="clearfix hide-collection-small"></div>
-        <div class="page-width hide-collection-small" style="margin-bottom: 80px;">
-          <div class="newsletter-section newsletter-{{ section.id }}">
-
-            <div class="grid">
-              <div class="page-width">
-
-
-                <div class="grid__item medium-up--one-half">
-
-                  <p class="h2">Get the latest right in your inbox. Subscribe to our newsletter.</p>
-
-
-                </div>
-                <div class="grid__item medium-up--one-half text-right">
-                  {%- render 'newsletter-form', section_id: section.id, snippet_context: 'section' -%}
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="clearfix hide-collection-small" style="margin-bottom: 80px"></div>
-
-      {%- endif -%} -->
-
     {%- else -%}
       <div class="grid__item">
         <p>{{ 'collections.general.no_matches' | t }}</p>

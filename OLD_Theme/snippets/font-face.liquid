@@ -4,11 +4,6 @@
 {%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
 {%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
 
-<!-- custom font override [tls] -->
-{%- assign header_font = 'WarnockPro' -%}
-{%- assign base_font = 'AdelleSans' -%}
-
-
 {%- style -%}
   {{ header_font | font_face: font_display: 'swap' }}
   {{ base_font | font_face: font_display: 'swap' }}

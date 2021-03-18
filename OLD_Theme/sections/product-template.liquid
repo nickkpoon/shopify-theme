@@ -25,6 +25,22 @@
     "name": "Product pages",
     "settings": [
       {
+        "type": "select",
+        "id": "description_style",
+        "label": "Description position",
+        "default": "default",
+        "options": [
+          {
+            "value": "default",
+            "label": "Next to media"
+          },
+          {
+            "value": "full",
+            "label": "Below media"
+          }
+        ]
+      },
+      {
         "type": "checkbox",
         "id": "social_enable",
         "label": "Enable social sharing",

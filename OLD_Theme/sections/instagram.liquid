@@ -1,45 +1,12 @@
-<div class="index-section instagram-feed-container">
-  <div class="page-width">
-
-    <div class="section--divider">
-
-    <div class="grid">
-      <div class="grid__item{% if section.settings.narrow_column %} medium-up--three-quarters medium-up--push-one-eighth{% endif %}">
-
-        {%- if section.settings.title != blank -%}
-          <div class="section-header">
-            <h2 class="section-header__title">
-              {{ section.settings.title }}
-            </h2>
-          </div>
-        {%- endif -%}
-
-        <div id="insta-feed"></div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
 {% schema %}
   {
-    "name": "Instagram",
-    "class": "index-section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Contact us"
-      }
-    ],
-    "presets": [
-      {
-        "name": "Instagram feed",
-        "category": "Promotional"
-      }
-    ]
+    "name": "Section name",
+    "settings": []
   }
 {% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

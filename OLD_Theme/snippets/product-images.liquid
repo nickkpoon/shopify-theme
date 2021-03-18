@@ -11,11 +11,6 @@
     <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}">
 
       <div class="product__main-photos" data-aos data-product-single-media-group>
-        {%- unless product.available -%}
-          <div class="grid-product__tag grid-product__tag--sold-out">
-            {{ 'products.product.sold_out' | t }}
-          </div>
-        {%- endunless -%}
         <div id="ProductPhotos-{{ section_id }}">
           {%- for media in product.media -%}
             {%- render 'media',

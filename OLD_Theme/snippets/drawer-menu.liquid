@@ -7,7 +7,7 @@
 <div id="NavDrawer" class="drawer drawer--{{ drawer_position }}">
   <div class="drawer__contents">
     <div class="drawer__fixed-header drawer__fixed-header--full">
-      <div class="drawer__header drawer__header--full ">
+      <div class="drawer__header drawer__header--full appear-animation appear-delay-{{ animation_row }}">
         <div class="h2 drawer__title">
         </div>
         <div class="drawer__close">
@@ -28,7 +28,7 @@
             {%- assign has_dropdown = true -%}
           {%- endif -%}
 
-          <li class="mobile-nav__item ">
+          <li class="mobile-nav__item appear-animation appear-delay-{{ animation_row }}">
             {%- if has_dropdown -%}
               <div class="mobile-nav__has-sublist">
                 {%- if link.url == '#' -%}
@@ -151,7 +151,7 @@
 
               {%- if shop.customer_accounts_enabled -%}
                 {%- assign animation_row = animation_row | plus: 1 -%}
-                <div class="grid__item one-half ">
+                <div class="grid__item one-half appear-animation appear-delay-{{ animation_row }}">
                   <a href="{{ routes.account_url }}" class="mobile-nav__link">
                     {%- if customer -%}
                       {{ 'layout.customer.account' | t }}
@@ -166,7 +166,6 @@
         {%- endif -%}
       </ul>
 
-      {% comment %}
       {%- assign animation_row = animation_row | plus: 1 -%}
       <ul class="mobile-nav__social appear-animation appear-delay-{{ animation_row }}">
         {%- if settings.social_instagram_link != blank -%}
@@ -250,7 +249,6 @@
           </li>
         {%- endif -%}
       </ul>
-      {% endcomment %}
     </div>
   </div>
 </div>

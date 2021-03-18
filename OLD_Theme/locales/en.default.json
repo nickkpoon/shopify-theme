@@ -19,7 +19,7 @@
       "next": "Next"
     },
     "password_page": {
-      "login_form_heading": "Enter password",
+      "login_form_heading": "Enter store using password",
       "login_form_password_label": "Password",
       "login_form_password_placeholder": "Your password",
       "login_form_submit": "Enter",
@@ -44,9 +44,9 @@
       }
     },
     "newsletter_form": {
-      "newsletter_email": "Email",
-      "newsletter_confirmation": "Thanks for joining",
-      "submit": "Join"
+      "newsletter_email": "Enter your email",
+      "newsletter_confirmation": "Thanks for subscribing",
+      "submit": "Subscribe"
     },
     "search": {
       "view_more": "View more",
@@ -135,7 +135,7 @@
   "collections": {
     "general": {
       "catalog_title": "Catalog",
-      "all_of_collection": "Shop all",
+      "all_of_collection": "View all",
       "view_all_products_html": "View all<br>{{ count }} products",
       "see_more": "Show more",
       "see_less": "Show less",

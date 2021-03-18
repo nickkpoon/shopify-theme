@@ -1,118 +1,12 @@
-<div class="page-width {% if section.settings.hide-mobile %}small--hide{% endif %}" >
-  {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
-  
-  {%- if section.settings.title != blank -%}
-    <div class="section-header text-{{ section.settings.align_text }}">
-      <h2>{{ section.settings.title }}</h2>
-    </div>
-  {%- endif -%}
-
-  <div class="grid{% unless section.blocks.size == 5 %} grid--uniform{% endunless %} grid--flush-bottom">
-    {%- liquid
-      assign grid_item_width = 'medium-up--one-third'
-      case section.blocks.size
-        when 1
-          assign grid_item_width = 'medium-up--one-half'
-        when 2
-          assign grid_item_width = 'medium-up--one-half'
-        when 4
-          assign grid_item_width = 'medium-up--one-half'
-      endcase
-    -%}
-    {%- for block in section.blocks -%}
-      {%- if section.blocks.size == 5 and forloop.index < 3 -%}
-        {%- assign column_width = 'medium-up--one-half' -%}
-      {%- else -%}
-        {%- assign column_width = grid_item_width -%}
-      {%- endif -%}
-      <div class="grid__item {{ column_width }} text-{{ section.settings.align_text }}" {{ block.shopify_attributes }} data-aos="row-of-3">
-        {%- if block.settings.title != blank -%}
-          <h2>{{ block.settings.title }}</h2>
-        {%- endif -%}
-        {%- if block.settings.text != blank -%}
-          <div class="rte-setting text-spacing">{{ block.settings.text }}</div>
-        {%- endif -%}
-      </div>
-    {%- endfor -%}
-  </div>
-</div>
-
-{%- if section.settings.divider -%}</div>{%- endif -%}
-
 {% schema %}
   {
-    "name": "Text columns",
-    "class": "index-section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Heading"
-      },
-      {
-        "type": "select",
-        "id": "align_text",
-        "label": "Alignment",
-        "default": "left",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "center",
-            "label": "Centered"
-          }
-        ]
-      },
-      {
-        "type": "checkbox",
-        "id": "divider",
-        "label": "Show section divider",
-        "default": false
-      },
-	  {
-            "type": "checkbox",
-            "id": "hide-mobile",
-            "label": "Hide on mobile"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "text_block",
-        "name": "Column",
-        "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Heading",
-            "default": "Example title"
-          },
-          {
-            "type": "richtext",
-            "id": "text",
-            "label": "Text",
-            "default": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Text columns",
-        "category": "Text",
-        "blocks": [
-          {
-            "type": "text_block"
-          },
-          {
-            "type": "text_block"
-          },
-          {
-            "type": "text_block"
-          }
-        ]
-      }
-    ]
+    "name": "Section name",
+    "settings": []
   }
 {% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

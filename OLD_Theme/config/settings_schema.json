@@ -52,12 +52,6 @@
       },
       {
         "type": "color",
-        "id": "color_hover",
-        "label": "Hover",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
         "id": "color_button_text",
         "label": "Button text",
         "default": "#ffffff"
@@ -78,12 +72,6 @@
         "type": "color",
         "id": "color_cart_dot",
         "label": "Cart dot",
-        "default": "#ff4f33"
-      },
-      {
-        "type": "color",
-        "id": "color_accent",
-        "label": "Accent color",
         "default": "#ff4f33"
       },
       {
@@ -390,24 +378,6 @@
       },
       {
         "type": "range",
-        "id": "type_mobilebase_size",
-        "label": "Mobile Base size",
-        "default": 16,
-        "min": 12,
-        "max": 18,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "type_button_size",
-        "label": "Button size",
-        "default": 16,
-        "min": 12,
-        "max": 16,
-        "unit": "px"
-      },
-      {
-        "type": "range",
         "id": "type_base_line_height",
         "label": "Line height",
         "default": 1.4,
@@ -505,6 +475,30 @@
       {
         "type": "header",
         "content": "Buttons"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Style",
+        "default": "square",
+        "options": [
+          {
+            "value": "square",
+            "label": "Square"
+          },
+          {
+            "value": "round-slight",
+            "label": "Slightly round"
+          },
+          {
+            "value": "round",
+            "label": "Round"
+          },
+          {
+            "value": "angled",
+            "label": "Angled"
+          }
+        ]
       },
       {
         "type": "header",
@@ -766,6 +760,28 @@
         "default": true
       },
       {
+        "type": "page",
+        "label": "Additional content 2",
+        "id": "product_content_2"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_content_collapse_2",
+        "label": "Collapse",
+        "default": true
+      },
+      {
+        "type": "page",
+        "label": "Additional content 3",
+        "id": "product_content_3"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_content_collapse_3",
+        "label": "Collapse",
+        "default": true
+      },
+      {
         "type": "header",
         "content": "Contact form"
       },
@@ -969,6 +985,22 @@
           {
             "value": "drawer",
             "label": "Drawer"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "cart_icon",
+        "label": "Cart icon",
+        "default": "bag",
+        "options": [
+          {
+            "value": "bag",
+            "label": "Bag"
+          },
+          {
+            "value": "cart",
+            "label": "Cart"
           }
         ]
       },

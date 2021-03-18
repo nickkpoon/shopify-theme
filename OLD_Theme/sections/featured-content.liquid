@@ -1,19 +1,15 @@
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
 <div
   data-section-id="{{ section.id }}"
   data-section-type="featured-content-section"
   class="text-{{ section.settings.align_text }}">
 
   <div class="page-width">
-    {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
-
     <div class="grid">
       <div class="grid__item{% if section.settings.narrow_column %} medium-up--three-quarters medium-up--push-one-eighth{% endif %}">
         {%- if section.settings.title != blank -%}
-          <h2 class="{% if section.settings.mobile_title != blank %}small--hide{% endif %}">{{ section.settings.title }}</h2>
-        {%- endif -%}
-
-        {%- if section.settings.mobile_title != blank -%}
-          <h2 class="medium-up--hide">{{ section.settings.mobile_title }}</h2>
+          <h2>{{ section.settings.title }}</h2>
         {%- endif -%}
 
         {%- if section.settings.text != blank -%}
@@ -44,9 +40,6 @@
             {%- endcase -%}
           </div>
         {%- endfor -%}
-
-
-        <a class="btn" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
       </div>
     </div>
   </div>
@@ -64,11 +57,6 @@
         "type": "text",
         "id": "title",
         "label": "Heading"
-      },
-	  {
-        "type": "text",
-        "id": "mobile_title",
-        "label": "Mobile Heading"
       },
       {
         "type": "richtext",
@@ -102,16 +90,6 @@
         "id": "enlarge_text",
         "label": "Enlarge text",
         "default": true
-      },
-	  {
-        "type": "text",
-        "id": "button_text",
-        "label": "Button text"
-      },
-	  {
-        "type": "url",
-        "id": "button_link",
-        "label": "Button link"
       },
       {
         "type": "checkbox",
