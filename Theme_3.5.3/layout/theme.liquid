@@ -78,7 +78,7 @@
 
     <script
       src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}"
-      defer
+      defer async
     ></script>
 
     {%- if shop.enabled_currencies.size > 1 -%}
@@ -93,7 +93,7 @@
     /></noscript>
     {%- endif -%}
 
-    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer async></script>
 
     {%- if request.page_type contains 'customers/' -%}
     <script
