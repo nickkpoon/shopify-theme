@@ -5,6 +5,23 @@
   http://archetypethemes.co
 */
 
+/*! Custom Fonts */
+
+@font-face {
+  font-family: "WarnockPro";
+  src: url("WarnockPro-Regular.otf")
+	format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AdelleSans";
+  	src: url("Adelle_Sans.otf")
+      format("opentype");
+      font-display: swap;
+}
+
+
 :root{
   --colorBtnPrimary:{{ settings.color_button | default: "#000" }};
   --colorBtnPrimaryLight:{{ settings.color_button | default: "#000" | color_lighten: 10 }};
@@ -901,7 +918,8 @@ body,html{
   height:1px;
   border:0;
   border-top:1px solid;
-  border-top-color:{{ settings.color_borders | default: "#1c1d1d" }};
+  /* border-top-color:{{ settings.color_borders | default: "#1c1d1d" }}; imprint edit 3/26/2021 */
+  border-top-color: rgba(116, 109, 101, 0.5);
   border-top-color:var(--colorBorder);
 }
 
@@ -7393,7 +7411,7 @@ html[dir=rtl] .grid-product__content{
   }
 
 [data-center-text=true] .grid-product__meta{
-    text-align:center
+    text-align:left
 }
 
 .grid-product__meta{
@@ -7416,6 +7434,7 @@ html[dir=rtl] .grid-product__content{
   font-size:0.75em;
   margin-top:5px;
   opacity:0.65;
+  color: #BA9144;
 }
 
 .grid-product__price{
@@ -9693,11 +9712,14 @@ html[dir=rtl] .product-single__meta .rte{
   letter-spacing:0.3em;
   font-size:0.75em;
   margin-bottom:7.5px;
+  color: #BA9144;
 }
 
 .product-single__title{
   margin-bottom:10px;
   word-wrap:break-word;
+  /* Imprint custom text */
+  font-family:WarnockPro;
 }
 
 .product-single__review-link{
@@ -10892,4 +10914,128 @@ html[dir=rtl] .product-single__meta .rte{
   .template-giftcard .logo{
     color:#58686f;
   }
+
+}
+
+ /* custom css Imprint Space */
+
+ .story-outer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-container {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.side-by-side-images {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}  
+
+.half-image:nth-of-type(even) {
+  width: 50%;
+  margin-left: 10px;
+}
+
+.half-image:nth-of-type(odd) {
+  width: 50%;
+  margin-right: 10px;
+}
+
+.half-image video {
+  max-width: 100%;
+}
+
+.article-image-full {
+  width: 100%;
+}
+
+.article-image-full img {
+  width: 100%;
+}
+
+.article-image-full video {
+  width: 100%;
+}
+
+.article-image-full-page {
+  width: 100vw;
+}
+
+.article-image-full-page img {
+  width: 100vw;
+}
+
+.page-content--product .artisan-info-blurb {
+  margin-top: 20px;
+}
+
+.story-link {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.product-membership .flex-grid__item--66 {
+  max-width: 50%;
+  font-size: 20px;
+  padding: 15px 0;
+}
+
+.page-content--product .flex-grid__item--66,
+.story-container .flex-grid__item--66  {
+  max-width: 66%;
+
+}
+
+.page-content--product .flex-grid__item--66 {
+  max-width: 100%;
+}
+
+.story-title {
+  margin-top: 8px;
+  display: flex;
+  width: 100%;
+}
+
+.story-title h2 {
+  margin-bottom: 0;
+}
+
+.story-title img {
+  margin-left: 15px;
+}
+
+/* .story-title a {
+  font-family: 'AdelleSans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+} */
+
+.section-header__title{
+  font-family:WarnockPro;
+}
+
+.grid-product__vendor {
+  font-family: 'AdelleSans';
+  font-size: 10px;
+  line-height: 13px;
+  text-transform: uppercase;
+
+}
+
+.product-single__vendor a {
+  color: #BA9144;
 }
