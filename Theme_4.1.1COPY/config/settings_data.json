@@ -95,6 +95,8 @@
           "1524770014057": {
             "type": "logo",
             "settings": {
+              "logo": "shopify:\/\/shop_images\/imprint_logo_3x_7e8904da-e340-4414-988e-ef355963adb8.png",
+              "logo-inverted": "shopify:\/\/shop_images\/imprint-logo-white.png",
               "desktop_logo_width": 140,
               "mobile_logo_width": 110
             }
@@ -387,10 +389,10 @@
             "type": "text-and-image",
             "settings": {
               "image": "shopify:\/\/shop_images\/ab-prod-top-left.jpg",
-              "image_width": 500,
+              "image_width": 650,
               "subtitle": "",
               "title": "The making of...",
-              "text": "<p>Each piece is the result of an intimate wrangle with the artist on the wheel. Abigail Schama works with a palette of transparent glazes and 24-carat gold lustre layered over a darker clay body. She marks the exterior and interior surfaces, creating a rugged, human tactility and imbuing each vessel with its own inner life. Each pieces&#x27; form and contours play on the edges of functionality; no two pieces are alike.<\/p>",
+              "text": "<p>Each piece is the result of an intimate wrangle with the artist on the wheel. Abigail Schama works with a palette of transparent glazes and 24-carat gold lustre layered over a darker clay body. <\/p>",
               "button_label": "",
               "layout": "right"
             }
@@ -399,18 +401,18 @@
             "type": "text-columns",
             "settings": {
               "title": "",
-              "align_text": "center",
+              "align_text": "left",
               "enable_image_1": true,
               "image_1": "shopify:\/\/shop_images\/ab-prod-top-right.jpg",
               "image_width_1": 650,
               "title_1": "",
-              "text_1": "<p>Abigail Schama works with a palette of transparent glazes and 24-carat gold lustre layered over a darker clay body.<\/p>",
+              "text_1": "<p>She marks the exterior and interior surfaces, creating a rugged, human tactility and imbuing each vessel with its own inner life. <\/p>",
               "button_label_1": "",
               "enable_image_2": true,
               "image_2": "shopify:\/\/shop_images\/Abigail_Schama_-_The_Wrangle_019_28d910b9-d919-4d29-a90e-cbcaa6eaf0f2.jpg",
               "image_width_2": 650,
               "title_2": "",
-              "text_2": "<p>She marks the exterior and interior surfaces, creating a rugged, human tactility and imbuing each vessel with its own inner life.<\/p>",
+              "text_2": "<p>Each pieces&#x27; form and contours play on the edges of functionality; no two pieces are alike.<\/p>",
               "button_label_2": "",
               "enable_image_3": false,
               "image_width_3": 650,
@@ -419,25 +421,19 @@
               "button_label_3": ""
             }
           },
-          "605a547c-6bf5-4613-a78e-a24974367d49": {
-            "type": "hero-video",
+          "1702cc8d-4e62-4bdc-8523-cf828d639cbb": {
+            "type": "custom-html",
             "settings": {
-              "title": "",
-              "title_size": 80,
-              "subheading": "Each pieces' form and contours play on the edges of functionality; no two pieces are alike.",
-              "link_text": "",
-              "text_align": "vertical-center horizontal-center",
-              "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/AS-RimBase-na.mp4?v=1608004231",
-              "overlay_opacity": 44,
-              "section_height": "750px",
-              "mobile_height": "auto"
+              "full_width": false,
+              "space_around": true,
+              "code": "<div class=\"article-image-full\"><video id=\"Mp4Video-{{ section.id }}\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/AS-RimBase-na.mp4?v=1608004231\" loop=\"loop\" muted=\"\" playsinline=\"\" autoplay=\"autoplay\"><\/video><\/div>"
             }
           },
           "bca38044-b074-4e1e-9a53-13ba52ce2ab0": {
             "type": "text-and-image",
             "settings": {
               "image": "shopify:\/\/shop_images\/Abigail_Schama_002.jpg",
-              "image_width": 500,
+              "image_width": 650,
               "subtitle": "About",
               "title": "Abigail Schama",
               "text": "<p>London-based Abigail Schama came to ceramics after a long career as a painter. Her works explore untethering humanity within clay, and showcase the beauty and strength in putting imperfections on display.<\/p>",
@@ -469,7 +465,7 @@
           "3b84d67e-d09c-4654-8df4-07f266a846f9",
           "04b3c457-3346-4b5c-acfe-950390c25fba",
           "1a77d32b-2339-424d-994c-1d5b7180b04a",
-          "605a547c-6bf5-4613-a78e-a24974367d49",
+          "1702cc8d-4e62-4bdc-8523-cf828d639cbb",
           "bca38044-b074-4e1e-9a53-13ba52ce2ab0",
           "1f6aa22b-924f-4e5d-8cbb-c93aa1721577",
           "96890a06-5754-44bb-90e8-2368a406c1b5"
@@ -600,29 +596,8 @@
       },
       "collection-sidebar": {
         "type": "collection-sidebar",
-        "blocks": {
-          "1524772785241": {
-            "type": "subcollections",
-            "settings": {
-              "enable_subsubcollections": true,
-              "enable_count": false,
-              "collapsed": false
-            }
-          },
-          "1524772580942": {
-            "type": "tags_all",
-            "settings": {
-              "title": "Tags",
-              "collapsed": false
-            }
-          }
-        },
-        "block_order": [
-          "1524772785241",
-          "1524772580942"
-        ],
         "settings": {
-          "enable_sidebar": true,
+          "enable_sidebar": false,
           "filter_style": "sidebar",
           "tags_combine": false,
           "enable_sort": true
@@ -801,31 +776,18 @@
               "framed": false
             }
           },
-          "1526496043079": {
-            "type": "advanced",
+          "c27a9602-9ee6-4aef-af9a-44c92f0fc063": {
+            "type": "image",
             "settings": {
               "promo_collection": "",
-              "subheading": "Limited time",
-              "heading": "Announce your promotion",
-              "textarea": "Include the smaller details of your promotion in text below the title.",
-              "cta_text1": "Shop This",
-              "cta_link1": "shopify:\/\/collections\/all",
-              "cta_text2": "Shop All",
-              "video_url": "",
-              "width": "100",
-              "height": 500,
-              "text_size": 120,
-              "text_align": "vertical-center horizontal-center",
-              "focal_point": "center",
-              "color_accent": "rgba(0,0,0,0)",
-              "boxed": false,
-              "framed": true
+              "image": "shopify:\/\/shop_images\/DSC02211.jpg",
+              "width": "100"
             }
           }
         },
         "block_order": [
           "1526403837307",
-          "1526496043079"
+          "c27a9602-9ee6-4aef-af9a-44c92f0fc063"
         ],
         "settings": {
           "gutter_size": 20
@@ -851,6 +813,15 @@
         "settings": {
           "show_section": true,
           "recent_count": 5
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "title_enable": true,
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": "3"
         }
       }
     },
@@ -938,7 +909,7 @@
       "type_collection_size": 18,
       "type_header_base_size": 38,
       "type_header_capitalize": true,
-      "type_header_font_family": "WarnockPro",
+      "type_header_font_family": "tiemann_n4",
       "type_header_line_height": 1,
       "type_header_spacing": "0",
       "type_headers_align_text": true,
