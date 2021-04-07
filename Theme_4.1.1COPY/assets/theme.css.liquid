@@ -9,14 +9,14 @@
 
 @font-face {
   font-family: "WarnockPro";
-  src: url("WarnockPro-Regular.otf")
+  src: url('{{ "WarnockPro-Regular.otf" | asset_url }}')
 	format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: "AdelleSans";
-  	src: url("Adelle_Sans.otf")
+  src: url('{{ "Adelle_Sans.otf" | asset_url }}')
       format("opentype");
       font-display: swap;
 }
@@ -6154,7 +6154,7 @@ input[type=image]{
 @media only screen and (min-width:1050px){
 
 .feature-row{
-    margin:0 6%
+    margin:0 2.4%
 }
   }
 
@@ -7411,7 +7411,9 @@ html[dir=rtl] .grid-product__content{
   }
 
 [data-center-text=true] .grid-product__meta{
-    text-align:center
+    /*text-align:center         imprint edit*/ 
+    text-align:left;
+
 }
 
 .grid-product__meta{
@@ -7434,6 +7436,9 @@ html[dir=rtl] .grid-product__content{
   font-size:0.75em;
   margin-top:5px;
   opacity:0.65;
+  /*imprint color edit*/
+  color: #BA9144;
+
 }
 
 .grid-product__price{
@@ -9711,6 +9716,9 @@ html[dir=rtl] .product-single__meta .rte{
   letter-spacing:0.3em;
   font-size:0.75em;
   margin-bottom:7.5px;
+  /* Imprint custom color*/
+  color: #BA9144;
+
 }
 
 .product-single__title{
@@ -10958,10 +10966,12 @@ html[dir=rtl] .product-single__meta .rte{
 
 .article-image-full img {
   width: 100%;
+  margin-right: 22px;
 }
 
 .article-image-full video {
   width: 100%;
+  padding-right: 3.5%;
 }
 
 .article-image-full-page {
@@ -11024,4 +11034,34 @@ html[dir=rtl] .product-single__meta .rte{
 
 .section-header__title{
   font-family:WarnockPro;
+}
+
+.enlarge-text p{
+  font-family:WarnockPro;
+  text-transform: none; 
+  font-size: 26px; 
+  line-height: 1.2em;
+}
+
+
+.featured-row__subtext p{
+  font-family:AdelleSans;
+  font-size: 15px;
+  line-height: 1.3em;
+}
+
+
+.feature-row__text .h3{
+  font-family:WarnockPro;
+  font-size: 30px; 
+}
+
+.rte-setting p{
+  font-family:AdelleSans;
+  font-size: 15px;
+  line-height: 1.3em;
+}
+
+.product-single__vendor a {
+  color: #BA9144;
 }

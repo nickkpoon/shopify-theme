@@ -551,6 +551,7 @@
               "link_text_2": "Shop all",
               "color_accent": "#000000",
               "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/scoop.png",
               "overlay_opacity": 0,
               "focal_point": "top center"
             }
@@ -780,7 +781,7 @@
             "type": "image",
             "settings": {
               "promo_collection": "",
-              "image": "shopify:\/\/shop_images\/DSC02211.jpg",
+              "image": "shopify:\/\/shop_images\/Rectangle_32_a799a991-a0e8-4b30-aa4b-7e18aab75c1c.png",
               "width": "100"
             }
           }
