@@ -91,10 +91,10 @@
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "cart_terms_conditions_link": "",
-    "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+    "social_facebook_link": "https:\/\/www.facebook.com\/imprintspace",
     "social_twitter_link": "",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/instagram.com\/shopify",
+    "social_instagram_link": "https:\/\/instagram.com\/imprintspace",
     "social_snapchat_link": "",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
@@ -199,7 +199,7 @@
           "show_currency_flags": false,
           "show_payment_icons": false,
           "show_copyright": true,
-          "copyright_text": "COPYRIGHT © 2020 Imprint Space. All rights reserved.",
+          "copyright_text": "COPYRIGHT © 2021 Imprint Space. All rights reserved.",
           "copyright_menu": "copyright-links"
         }
       },
@@ -517,9 +517,9 @@
       "1602792838921": {
         "type": "featured-content",
         "settings": {
-          "title": "Nominations Open: April 2021",
-          "mobile_title": "Nominations Open: April 2021",
-          "text": "<p>Our April 2021 planning is underway and we welcome the opportunity to hear from you. Searching the globe, we aim to explore the lives of craftsman — those who take raw materials and turn them into pieces of art, armed only with their hands, simple tools, and their big imaginations. We&#x27;ve opened up nominations for the people, places, and crafts you love. Submission deadline is March 15, 2020.<\/p>",
+          "title": "Nominations Open: May 2021",
+          "mobile_title": "Nominations Open: May 2021",
+          "text": "<p>Our May 2021 planning is underway and we welcome the opportunity to hear from you. Searching the globe, we aim to explore the lives of craftsman — those who take raw materials and turn them into pieces of art, armed only with their hands, simple tools, and their big imaginations. We&#x27;ve opened up nominations for the people, places, and crafts you love. Submission deadline is April 15, 2021.<\/p>",
           "align_text": "center",
           "narrow_column": true,
           "enlarge_text": false,
