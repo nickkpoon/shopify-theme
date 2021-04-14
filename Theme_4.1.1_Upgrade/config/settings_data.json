@@ -164,7 +164,7 @@
           "subcollection_style": "above",
           "subcollections_per_row": 5,
           "enable_collection_count": true,
-          "per_row": 4,
+          "per_row": 3,
           "rows_per_page": 7,
           "mobile_flush_grid": false
         }
@@ -186,9 +186,10 @@
       "article-template": {
         "type": "article-template",
         "settings": {
+          "image_hero": true,
           "blog_show_tags": true,
-          "blog_show_date": true,
-          "blog_show_comments": true,
+          "blog_show_date": false,
+          "blog_show_comments": false,
           "blog_show_author": false,
           "social_sharing_blog": true
         }
@@ -415,9 +416,9 @@
       "collection-header": {
         "type": "collection-header",
         "settings": {
-          "enable": true,
-          "collection_image_enable": true,
-          "parallax": true
+          "enable": false,
+          "collection_image_enable": false,
+          "parallax": false
         }
       },
       "collection-sidebar": {
@@ -444,7 +445,7 @@
           "1524772580942"
         ],
         "settings": {
-          "enable_sidebar": true,
+          "enable_sidebar": false,
           "filter_style": "sidebar",
           "tags_combine": false,
           "enable_sort": true
@@ -452,46 +453,6 @@
       },
       "collection-promotions": {
         "type": "collection-promotions",
-        "blocks": {
-          "1526403837307": {
-            "type": "banner",
-            "settings": {
-              "promo_collection": "",
-              "heading": "Banner promotion",
-              "text": "Add the details of your promotion in smaller text",
-              "link": "shopify:\/\/collections\/all",
-              "label": "Shop now",
-              "color_tint": "#e95454",
-              "color_tint_opacity": 10,
-              "framed": false
-            }
-          },
-          "1526496043079": {
-            "type": "advanced",
-            "settings": {
-              "promo_collection": "",
-              "subheading": "Limited time",
-              "heading": "Announce your promotion",
-              "textarea": "Include the smaller details of your promotion in text below the title.",
-              "cta_text1": "Shop This",
-              "cta_link1": "shopify:\/\/collections\/all",
-              "cta_text2": "Shop All",
-              "video_url": "",
-              "width": "100",
-              "height": 500,
-              "text_size": 120,
-              "text_align": "vertical-center horizontal-center",
-              "focal_point": "center",
-              "color_accent": "rgba(0,0,0,0)",
-              "boxed": false,
-              "framed": true
-            }
-          }
-        },
-        "block_order": [
-          "1526403837307",
-          "1526496043079"
-        ],
         "settings": {
           "gutter_size": 20
         }
@@ -499,7 +460,7 @@
       "footer-promotions": {
         "type": "footer-promotions",
         "settings": {
-          "hide_homepage": false,
+          "hide_homepage": true,
           "image_size": "wide"
         }
       },
