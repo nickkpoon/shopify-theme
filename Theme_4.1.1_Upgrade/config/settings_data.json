@@ -416,7 +416,7 @@
       "collection-header": {
         "type": "collection-header",
         "settings": {
-          "enable": false,
+          "enable": true,
           "collection_image_enable": false,
           "parallax": false
         }
@@ -448,7 +448,7 @@
           "enable_sidebar": false,
           "filter_style": "sidebar",
           "tags_combine": false,
-          "enable_sort": true
+          "enable_sort": false
         }
       },
       "collection-promotions": {
@@ -672,6 +672,15 @@
           "enlarge_text": false,
           "divider": true
         }
+      },
+      "1618376273e1c6121a": {
+        "type": "instafeed",
+        "settings": {
+          "heading_font": "serif",
+          "heading_size": 30,
+          "feed_width": 100,
+          "html_area": ""
+        }
       }
     },
     "content_for_index": [
@@ -683,7 +692,8 @@
       "1618281139cb7cc31f",
       "161828132629d75ab7",
       "1618281343a9698dfa",
-      "161828138058142942"
+      "161828138058142942",
+      "1618376273e1c6121a"
     ]
   },
   "presets": {
