@@ -41,8 +41,15 @@
             <header class="section-header section-header--hero">
               <div class="section-header__shadow">
                 {%- render 'breadcrumbs' -%}
+                {% comment %}
+                imprint - update collection title
                 <h1 class="section-header__title">
                   {{ collection.title }}
+                </h1>
+                 {% endcomment %} 
+                <h1 class="h2 section-header__title text-left">
+                  Shop our one-of-a-kind pieces, <br />
+                  straight from studios of master artisans around the world
                 </h1>
               </div>
             </header>
@@ -55,9 +62,16 @@
     <div class="page-width page-content page-content--top">
       <header class="section-header section-header--flush">
         {%- render 'breadcrumbs' -%}
+        {% comment %}
+        imprint - update collection title        
         <h1 class="section-header__title">
           {{ collection.title }}
         </h1>
+        {% endcomment %} 
+      <h1 class="h2 section-header__title text-left">
+        Shop our one-of-a-kind pieces, <br />
+        straight from studios of master artisans around the world
+      </h1>
       </header>
     </div>
   {%- endif -%}
