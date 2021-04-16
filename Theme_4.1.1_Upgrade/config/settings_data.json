@@ -118,7 +118,7 @@
           "announcement_compact": true,
           "announcement_above_header": false,
           "toolbar_menu": "",
-          "toolbar_social": true,
+          "toolbar_social": false,
           "show_locale_selector": false,
           "show_currency_selector": false,
           "show_currency_flags": false
@@ -487,7 +487,7 @@
           "subheading": "",
           "link_text": "Read Our Latest Stories",
           "link": "shopify:\/\/blogs\/stories",
-          "color_accent": "rgba(0,0,0,0)",
+          "color_accent": "#ffffff",
           "text_align": "vertical-center horizontal-center",
           "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/home-hero-vid.mp4?v=1604557663",
           "overlay_opacity": 0,
