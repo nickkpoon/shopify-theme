@@ -844,7 +844,7 @@ body,html{
 }
 
 .page-width{
-  max-width:1500px;
+  max-width:1200px;
   margin:0 auto;
 }
 
@@ -1134,7 +1134,7 @@ label{
   }
 
 .h1,.h2,.h3,h1,h2,h3{
-  font-family:var(--typeHeaderPrimary),var(--typeHeaderFallback);
+  font-family:'WarnockPro',var(--typeHeaderFallback);
   font-weight:var(--typeHeaderWeight);
   letter-spacing:var(--typeHeaderSpacing);
   line-height:var(--typeHeaderLineHeight);
@@ -6574,7 +6574,7 @@ input[type=image]{
 @media only screen and (min-width:769px){
 
 .hero__text-content .hero__link{
-      margin-top:15px
+      margin-top:85px
   }
     }
 
@@ -10918,3 +10918,37 @@ html[dir=rtl] .product-single__meta .rte{
 }
 
  /* custom css Imprint Space */
+.article-hero-text .hero__text-shadow {
+  flex: 1 0 33%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.article-hero-text .hero__text-shadow:nth-of-type(2) {
+  justify-content: center;
+}
+
+.article-hero-text .hero__text-shadow:nth-of-type(3) {
+  justify-content: flex-end;
+}
+
+.section-header__title{
+  font-family:WarnockPro;
+}
+
+.btn {
+  font-family: 'AdelleSans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 165%;
+  /* identical to box height, or 20px */
+
+  text-align: center;
+  letter-spacing: 0.2em;
+}
+
+.hero__title {
+	margin-bottom: 40px;
+}
