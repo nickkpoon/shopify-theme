@@ -491,7 +491,6 @@
           "color_accent": "#ffffff",
           "text_align": "vertical-center horizontal-center",
           "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/home-hero-vid.mp4?v=1604557663",
-          "overlay_opacity": 0,
           "section_height": "100vh",
           "mobile_height": "auto"
         }
@@ -505,8 +504,12 @@
               "enable_image": false,
               "image_width": 650,
               "title": "Discover",
+              "reduce_font": true,
               "text": "<p>Explore the rich stories of artisans from around the world<\/p>",
-              "button_label": ""
+              "button_label": "",
+              "tag": "",
+              "hide-mobile": false,
+              "hide-desktop": false
             }
           },
           "161828087689b7d1b0-1": {
@@ -515,8 +518,12 @@
               "enable_image": false,
               "image_width": 650,
               "title": "Connect",
+              "reduce_font": true,
               "text": "<p>Join a vibrant community that fuels the creative spirit<\/p>",
-              "button_label": ""
+              "button_label": "",
+              "tag": "",
+              "hide-mobile": false,
+              "hide-desktop": false
             }
           },
           "161828087689b7d1b0-2": {
@@ -525,8 +532,12 @@
               "enable_image": false,
               "image_width": 650,
               "title": "Shop",
+              "reduce_font": true,
               "text": "<p>Find collectible pieces straight from studios of master artisans <\/p>",
-              "button_label": ""
+              "button_label": "",
+              "tag": "",
+              "hide-mobile": false,
+              "hide-desktop": false
             }
           }
         },
@@ -538,7 +549,9 @@
         "settings": {
           "title": "",
           "align_text": "center",
-          "divider": false
+          "divider": false,
+          "hide-mobile": false,
+          "hide-desktop": false
         }
       },
       "161828102366bb8254": {
@@ -593,9 +606,13 @@
               "image": "shopify:\/\/shop_images\/Rectangle_125.png",
               "image_width": 650,
               "title": "Bifu Kimura: A 9th Generation Potter Mastering the Way of the Shokunin",
+              "reduce_font": true,
               "text": "",
               "button_label": "",
-              "button_link": "shopify:\/\/blogs\/stories\/bifu-kimura-a-9th-generation-potter-mastering-the-way-of-the-shokunin"
+              "button_link": "shopify:\/\/blogs\/stories\/bifu-kimura-a-9th-generation-potter-mastering-the-way-of-the-shokunin",
+              "tag": "Bizen",
+              "hide-mobile": true,
+              "hide-desktop": false
             }
           },
           "1618281139cb7cc31f-1": {
@@ -605,9 +622,13 @@
               "image": "shopify:\/\/shop_images\/jumpei-header.png",
               "image_width": 650,
               "title": "Jumpei Kaneshige: A Legacy Potter Unearthing the Flavor of Clay",
+              "reduce_font": true,
               "text": "",
               "button_label": "",
-              "button_link": "shopify:\/\/blogs\/stories\/jumpei-kaneshige-a-legacy-potter-unearthing-the-flavor-of-clay"
+              "button_link": "shopify:\/\/blogs\/stories\/jumpei-kaneshige-a-legacy-potter-unearthing-the-flavor-of-clay",
+              "tag": "Bizen",
+              "hide-mobile": true,
+              "hide-desktop": false
             }
           },
           "1618281139cb7cc31f-2": {
@@ -617,9 +638,13 @@
               "image": "shopify:\/\/shop_images\/kaz-header.png",
               "image_width": 650,
               "title": "Kazuya Ishida: A Breakdancing Potter in Bizen Rhythmically Blends Tradition with Modernity",
+              "reduce_font": true,
               "text": "",
               "button_label": "",
-              "button_link": "shopify:\/\/blogs\/stories\/kazuya-kaz-ishida-a-breakdancing-potter-in-bizen-rhythmically-blends-tradition-with-modernity"
+              "button_link": "shopify:\/\/blogs\/stories\/kazuya-kaz-ishida-a-breakdancing-potter-in-bizen-rhythmically-blends-tradition-with-modernity",
+              "tag": "Bizen",
+              "hide-mobile": true,
+              "hide-desktop": false
             }
           }
         },
@@ -630,8 +655,10 @@
         ],
         "settings": {
           "title": "",
-          "align_text": "center",
-          "divider": false
+          "align_text": "left",
+          "divider": false,
+          "hide-mobile": true,
+          "hide-desktop": false
         }
       },
       "161828132629d75ab7": {
@@ -697,6 +724,122 @@
           "hide-mobile": true,
           "hide-desktop": false
         }
+      },
+      "16189864394e3212ff": {
+        "type": "text-columns",
+        "blocks": {
+          "16189864394e3212ff-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/Rectangle_32_a799a991-a0e8-4b30-aa4b-7e18aab75c1c.png",
+              "image_width": 770,
+              "title": "Tom Henscheid: The Artful Craftsman Who Solves the Impossible",
+              "reduce_font": true,
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/blogs\/stories\/tom-henscheid-the-artful-craftsman-who-solves-the-impossible",
+              "tag": "Featured Artisan",
+              "hide-mobile": false,
+              "hide-desktop": true
+            }
+          },
+          "16189864394e3212ff-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/ab-story-placeholder.png",
+              "image_width": 770,
+              "title": "Imprint Presents: The Wrangle with Abigail Schama",
+              "reduce_font": true,
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/blogs\/stories\/abigail-schama-the-wrangle",
+              "tag": "Featured Artisan",
+              "hide-mobile": false,
+              "hide-desktop": true
+            }
+          },
+          "16189864394e3212ff-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/IMG_0924_-_5000x3000_ed5cdc0c-6021-44b4-9716-4acd4285638e.jpg",
+              "image_width": 770,
+              "title": "Bizen, Japan: A Primal Union of Man, Earth, and Fire",
+              "reduce_font": true,
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/blogs\/stories\/bizen-japan-a-primal-union-of-man-earth-and-fire",
+              "tag": "Bizen",
+              "hide-mobile": false,
+              "hide-desktop": true
+            }
+          },
+          "76ac0fb2-9d61-45cd-b8c6-44086d4460e2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/Rectangle_125.png",
+              "image_width": 770,
+              "title": "Bifu Kimura: A 9th Generation Potter Mastering the Way of the Shokunin",
+              "reduce_font": true,
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/blogs\/stories\/bifu-kimura-a-9th-generation-potter-mastering-the-way-of-the-shokunin",
+              "tag": "Bizen",
+              "hide-mobile": false,
+              "hide-desktop": true
+            }
+          },
+          "d4af0a61-f912-4414-b57e-e8a42779f76d": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/jumpei-header.png",
+              "image_width": 650,
+              "title": "Jumpei Kaneshige: A Legacy Potter Unearthing the Flavor of Clay",
+              "reduce_font": true,
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/blogs\/stories\/jumpei-kaneshige-a-legacy-potter-unearthing-the-flavor-of-clay",
+              "tag": "Bizen",
+              "hide-mobile": false,
+              "hide-desktop": true
+            }
+          },
+          "6b32945e-d886-410e-aeec-52e083bbec02": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/kaz-header.png",
+              "image_width": 770,
+              "title": "Kazuya Ishida: A Breakdancing Potter in Bizen Rhythmically Blends Tradition with Modernity",
+              "reduce_font": true,
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/blogs\/stories\/kazuya-kaz-ishida-a-breakdancing-potter-in-bizen-rhythmically-blends-tradition-with-modernity",
+              "tag": "Bizen",
+              "hide-mobile": false,
+              "hide-desktop": true
+            }
+          }
+        },
+        "block_order": [
+          "16189864394e3212ff-0",
+          "16189864394e3212ff-1",
+          "16189864394e3212ff-2",
+          "76ac0fb2-9d61-45cd-b8c6-44086d4460e2",
+          "d4af0a61-f912-4414-b57e-e8a42779f76d",
+          "6b32945e-d886-410e-aeec-52e083bbec02"
+        ],
+        "settings": {
+          "title": "",
+          "align_text": "left",
+          "divider": false,
+          "hide-mobile": false,
+          "hide-desktop": false
+        }
       }
     },
     "content_for_index": [
@@ -709,7 +852,8 @@
       "161828132629d75ab7",
       "1618281343a9698dfa",
       "161828138058142942",
-      "1618376273e1c6121a"
+      "1618376273e1c6121a",
+      "16189864394e3212ff"
     ]
   },
   "presets": {
