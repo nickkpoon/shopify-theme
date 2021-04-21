@@ -99,9 +99,9 @@
           "1524770014057": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/imprint_logo_3x_7e8904da-e340-4414-988e-ef355963adb8.png",
-              "logo-inverted": "shopify:\/\/shop_images\/imprint-logosand.png",
-              "desktop_logo_width": 140,
+              "logo": "shopify:\/\/shop_images\/Imprint_logo.png",
+              "logo-inverted": "shopify:\/\/shop_images\/Imprint_logo_white.png",
+              "desktop_logo_width": 160,
               "mobile_logo_width": 110
             }
           }
@@ -665,15 +665,14 @@
         "type": "newsletter",
         "settings": {
           "title": "Get the latest right in your inbox. Subscribe to our newsletter.",
-          "text": "",
-          "color_background": "#f9f9f9",
-          "color_text": "#1c1d1d"
+          "text": ""
         }
       },
       "1618281343a9698dfa": {
         "type": "featured-collection",
         "settings": {
           "title": "Shop",
+          "subtitle": "Shop our one-of-a-kind pieces straight from studios of master artisans around the world",
           "home_featured_products": "featured-collection",
           "per_row": 3,
           "rows": 2,
