@@ -541,27 +541,6 @@
           "divider": false
         }
       },
-      "1618280956a3b1f859": {
-        "type": "background-image-text",
-        "settings": {
-          "subtitle": "",
-          "title": "Tom Henscheid: The Artful Craftsman Who Solves the Impossible",
-          "text": "",
-          "text_color": "",
-          "tag": "Featured Artisan",
-          "button_label": "",
-          "button_link": "shopify:\/\/blogs\/stories\/tom-henscheid-the-artful-craftsman-who-solves-the-impossible",
-          "image": "shopify:\/\/shop_images\/Rectangle_32_a799a991-a0e8-4b30-aa4b-7e18aab75c1c.png",
-          "focal_point": "center",
-          "color_border": "#f4f4f4",
-          "layout": "left",
-          "height": 725,
-          "framed": false,
-          "parallax": false,
-          "hide-mobile": false,
-          "hide-desktop": false
-        }
-      },
       "161828102366bb8254": {
         "type": "background-image-text",
         "settings": {
@@ -576,10 +555,10 @@
           "focal_point": "center",
           "color_border": "#f4f4f4",
           "layout": "left",
-          "height": 750,
+          "height": 725,
           "framed": false,
           "parallax": false,
-          "hide-mobile": false,
+          "hide-mobile": true,
           "hide-desktop": false
         }
       },
@@ -593,14 +572,14 @@
           "tag": "Bizen",
           "button_label": "",
           "button_link": "shopify:\/\/blogs\/stories\/bizen-japan-a-primal-union-of-man-earth-and-fire",
-          "image": "shopify:\/\/shop_images\/Rectangle_33_bd507f4b-7eba-4bb9-9bf3-ec183c627337.png",
+          "image": "shopify:\/\/shop_images\/IMG_0924_-_5000x3000_ed5cdc0c-6021-44b4-9716-4acd4285638e.jpg",
           "focal_point": "center",
           "color_border": "#f4f4f4",
           "layout": "left",
-          "height": 750,
+          "height": 725,
           "framed": false,
           "parallax": false,
-          "hide-mobile": false,
+          "hide-mobile": true,
           "hide-desktop": false
         }
       },
@@ -697,12 +676,33 @@
           "feed_width": 100,
           "html_area": ""
         }
+      },
+      "16189799622ce3f723": {
+        "type": "background-image-text",
+        "settings": {
+          "subtitle": "",
+          "title": "Tom Henscheid: The Artful Craftsman Who Solves the Impossible",
+          "text": "",
+          "text_color": "",
+          "tag": "Featured Artisan",
+          "button_label": "",
+          "button_link": "shopify:\/\/blogs\/stories\/tom-henscheid-the-artful-craftsman-who-solves-the-impossible",
+          "image": "shopify:\/\/shop_images\/Rectangle_32_a799a991-a0e8-4b30-aa4b-7e18aab75c1c.png",
+          "focal_point": "center",
+          "color_border": "#f4f4f4",
+          "layout": "left",
+          "height": 725,
+          "framed": false,
+          "parallax": false,
+          "hide-mobile": true,
+          "hide-desktop": false
+        }
       }
     },
     "content_for_index": [
       "161828080516524f88",
       "161828087689b7d1b0",
-      "1618280956a3b1f859",
+      "16189799622ce3f723",
       "161828102366bb8254",
       "1618281090fc291b83",
       "1618281139cb7cc31f",
