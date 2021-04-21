@@ -40,6 +40,7 @@
     "type_navigation_size": 12,
     "type_navigation_capitalize": true,
     "type_product_style": "heading",
+    "type_product_capitalize": false,
     "type_collection_font": "heading",
     "type_collection_size": 28,
     "button_style": "round-slight",
@@ -546,30 +547,40 @@
           "subtitle": "",
           "title": "Tom Henscheid: The Artful Craftsman Who Solves the Impossible",
           "text": "",
+          "text_color": "",
+          "tag": "Featured Artisan",
           "button_label": "",
           "button_link": "shopify:\/\/blogs\/stories\/tom-henscheid-the-artful-craftsman-who-solves-the-impossible",
           "image": "shopify:\/\/shop_images\/Rectangle_32_a799a991-a0e8-4b30-aa4b-7e18aab75c1c.png",
           "focal_point": "center",
+          "color_border": "#f4f4f4",
           "layout": "left",
-          "height": 750,
+          "height": 725,
           "framed": false,
-          "parallax": false
+          "parallax": false,
+          "hide-mobile": false,
+          "hide-desktop": false
         }
       },
       "161828102366bb8254": {
         "type": "background-image-text",
         "settings": {
           "subtitle": "",
-          "title": "Watch Our New Film: The Wrangle with Abigail Schama",
+          "title": "Watch Our New Film:  The Wrangle with Abigail Schama",
           "text": "",
+          "text_color": "",
+          "tag": "Featured Artisan",
           "button_label": "",
           "button_link": "shopify:\/\/blogs\/stories\/abigail-schama-the-wrangle",
           "image": "shopify:\/\/shop_images\/ab-story-placeholder.png",
           "focal_point": "center",
+          "color_border": "#f4f4f4",
           "layout": "left",
           "height": 750,
           "framed": false,
-          "parallax": false
+          "parallax": false,
+          "hide-mobile": false,
+          "hide-desktop": false
         }
       },
       "1618281090fc291b83": {
@@ -578,14 +589,19 @@
           "subtitle": "",
           "title": "Bizen, Japan: A Primal Union of Man, Earth, and Fire",
           "text": "",
+          "text_color": "",
+          "tag": "Bizen",
           "button_label": "",
           "button_link": "shopify:\/\/blogs\/stories\/bizen-japan-a-primal-union-of-man-earth-and-fire",
           "image": "shopify:\/\/shop_images\/Rectangle_33_bd507f4b-7eba-4bb9-9bf3-ec183c627337.png",
           "focal_point": "center",
+          "color_border": "#f4f4f4",
           "layout": "left",
           "height": 750,
           "framed": false,
-          "parallax": false
+          "parallax": false,
+          "hide-mobile": false,
+          "hide-desktop": false
         }
       },
       "1618281139cb7cc31f": {
