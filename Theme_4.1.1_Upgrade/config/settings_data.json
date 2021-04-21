@@ -604,7 +604,7 @@
             "settings": {
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/Rectangle_125.png",
-              "image_width": 650,
+              "image_width": 770,
               "title": "Bifu Kimura: A 9th Generation Potter Mastering the Way of the Shokunin",
               "reduce_font": true,
               "text": "",
@@ -620,7 +620,7 @@
             "settings": {
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/jumpei-header.png",
-              "image_width": 650,
+              "image_width": 770,
               "title": "Jumpei Kaneshige: A Legacy Potter Unearthing the Flavor of Clay",
               "reduce_font": true,
               "text": "",
@@ -636,7 +636,7 @@
             "settings": {
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/kaz-header.png",
-              "image_width": 650,
+              "image_width": 770,
               "title": "Kazuya Ishida: A Breakdancing Potter in Bizen Rhythmically Blends Tradition with Modernity",
               "reduce_font": true,
               "text": "",
@@ -797,7 +797,7 @@
             "settings": {
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/jumpei-header.png",
-              "image_width": 650,
+              "image_width": 770,
               "title": "Jumpei Kaneshige: A Legacy Potter Unearthing the Flavor of Clay",
               "reduce_font": true,
               "text": "",
