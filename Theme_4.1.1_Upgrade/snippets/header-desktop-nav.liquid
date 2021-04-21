@@ -28,7 +28,7 @@
       class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}"
       {% if has_dropdown %}aria-haspopup="true"{% endif %}>
 
-      <a href="{{ link.url }}" class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}">
+      <a href="{{ link.url }}" class="{% if link.active %}current{% endif %} site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}">
         {{ link.title }}
       </a>
       {%- if is_megamenu -%}
@@ -70,7 +70,6 @@
                       <a
                         href="{{ childlink.url }}"
                         class="megamenu__colection-image"
-                        aria-label="{{collections[subcollection_handle].title}}"
                         style="background-image: url({{ collections[subcollection_handle].image | img_url: '400x' }})"></a>
                     {%- endif -%}
                   {%- endif -%}
