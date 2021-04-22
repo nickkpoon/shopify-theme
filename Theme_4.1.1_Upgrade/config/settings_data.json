@@ -54,12 +54,13 @@
     "sku_enable": false,
     "quantity_enable": false,
     "variant_type": "button",
+    "enable_payment_button": false,
     "inventory_enable": false,
     "product_zoom_enable": true,
     "product_color_swatches": false,
     "collection_color_swatches": false,
-    "product_content_1": "dimensions",
-    "product_content_2": "shipping",
+    "product_content_1": "",
+    "product_content_2": "",
     "product_contact": false,
     "collection_grid_style": "overlaid-box",
     "collection_grid_shape": "square",
@@ -69,14 +70,15 @@
     "collection_grid_opacity": 10,
     "collection_grid_gutter": true,
     "cart_type": "page",
+    "cart_icon": "cart",
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
     "social_pinterest_link": "https:\/\/www.pinterest.com\/shopify",
     "social_instagram_link": "https:\/\/instagram.com\/shopify",
-    "share_facebook": true,
-    "share_twitter": true,
-    "share_pinterest": true,
+    "share_facebook": false,
+    "share_twitter": false,
+    "share_pinterest": false,
     "favicon": "shopify:\/\/shop_images\/Imprint_mark_87f5885c-50bc-439b-b5e3-f19e9be21c50.png",
     "search_enable": false,
     "predictive_search_enabled": false,
@@ -173,13 +175,13 @@
       "product-template": {
         "type": "product-template",
         "settings": {
-          "description_style": "default",
-          "social_enable": true,
+          "description_style": "full",
+          "social_enable": false,
           "image_position": "left",
-          "image_size": "large",
-          "thumbnail_position": "beside",
-          "thumbnail_arrows": false,
-          "mobile_layout": "partial",
+          "image_size": "medium",
+          "thumbnail_position": "below",
+          "thumbnail_arrows": true,
+          "mobile_layout": "full",
           "enable_video_looping": true,
           "product_video_style": "muted"
         }
@@ -198,14 +200,11 @@
       "blog-template": {
         "type": "blog-template",
         "settings": {
-          "blog_show_tag_filter": true,
-          "blog_show_rss": false,
-          "blog_show_tags": true,
-          "blog_show_date": true,
-          "blog_show_comments": true,
+          "blog_show_date": false,
+          "blog_show_comments": false,
           "blog_show_author": false,
-          "blog_show_excerpt": false,
-          "blog_image_size": "wide"
+          "blog_show_excerpt": true,
+          "blog_image_size": "natural"
         }
       },
       "product-sections-template": {
@@ -293,62 +292,6 @@
       },
       "product-story-sections": {
         "type": "product-story-sections",
-        "blocks": {
-          "fe724d64-c381-4479-8512-77728e69179d": {
-            "type": "custom-html",
-            "settings": {
-              "full_width": false,
-              "space_around": true,
-              "code": "<div class=\"story-outer-container\">\n    <div class=\"story-container\">\n        <h3>\n            <meta charset=\"utf-8\"> <span>Sheherazade is a wheel-thrown, stoneware ceramic jug with handle by Abigail\n                Schama, seen in our film, The Wrangle. She is glazed lightly in white over a gray clay body. She sits on\n                a solid base, with a wide belly full of tales for one thousand nights or more. She is suitable as a\n                decorative piece, to display flowers, or to hold an extra large serving of negroni. <\/span>\n        <\/h3>\n        <h2 class=\"section--divider\" style=\"width: 100%; margin-top: 0;\">The making of...<\/h2>\n        <p>\n            <meta charset=\"utf-8\">\n            <meta charset=\"utf-8\"><span data-mce-fragment=\"1\">Each piece is the result of an intimate wrangle with the\n                artist on the wheel. Abigail Schama works with a palette of transparent glazes and 24-carat gold lustre\n                layered over a darker clay body. She marks the exterior and interior surfaces, creating a rugged, human\n                tactility and imbuing each vessel with its own inner life. Each pieces' form and contours play on the\n                edges of functionality; no two pieces are alike. <\/span><br>\n            <meta charset=\"utf-8\">\n        <\/p>\n        <div class=\"side-by-side-images\">\n            <div class=\"half-image\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/ab-prod-top-left_960x960.jpg?v=1608004230\" alt=\"abigail vertical left\" class=\"lazyload\"><\/div>\n            <div class=\"half-image\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/ab-prod-top-right_960x960.jpg?v=1608004230\" alt=\"abigail vertical right\" class=\"lazyload\"><\/div>\n        <\/div>\n        <div class=\"article-image-full\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/Abigail_Schama_-_The_Wrangle_019_28d910b9-d919-4d29-a90e-cbcaa6eaf0f2_960x960.jpg?v=1608004230\" alt=\"Abigail Middle\" class=\"lazyload\"><\/div>\n        <div class=\"article-image-full\"><video id=\"Mp4Video-{{ section.id }}\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/AS-RimBase-na.mp4?v=1608004231\" loop=\"loop\" muted=\"\" playsinline=\"\" autoplay=\"autoplay\"><\/video><\/div>\n        <h2 style=\"width: 100%;\">About Abigail Schama<\/h2>\n        <div class=\"article-image-full\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/Abigail_Schama_002_960x960.jpg?v=1608003142\" alt=\"Abigail Schama\" class=\"lazyload\"><\/div>\n        <p class=\"artisan-info-blurb\">\n            <meta charset=\"utf-8\"><span>London-based Abigail Schama came to ceramics after a long career as a painter.\n                Her works explore untethering humanity within clay, and showcase the beauty and strength in putting\n                imperfections on display. <\/span>\n        <\/p>\n        <div class=\"flex-grid flex-grid--center story-link\" onclick=\"window.location.href = '\/blogs\/stories\/abigail-schama-the-wrangle'\">\n            <div class=\"flex-grid__item\">\n                <hr class=\"hr--small-bottom\">\n            <\/div>\n            <div class=\"flex-grid flex-grid--center story-link\" onclick=\"window.location.href = '\/blogs\/stories\/abigail-schama-the-wrangle'\">\n                <div class=\"flex-grid flex-grid__item--66 title-container\">\n                    <div class=\"flex-grid__item--90 story-title\">\n                        <h2>Abigail Schama: The Wrangle<\/h2>\n                    <\/div>\n                    <a alt=\"story link\" href=\"\/blogs\/stories\/abigail-schama-the-wrangle\"> <\/a>\n                    <div class=\"flex-grid__item--90 story-title\">\n<a title=\"Abigail Schama The Wrangle\" href=\"https:\/\/imprintspace.com\/blogs\/stories\/abigail-schama-the-wrangle\"> Read Full\n                            Story<\/a><a alt=\"story link\" href=\"\/blogs\/stories\/abigail-schama-the-wrangle\"><img alt=\"arrow right\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/arrow-right.svg?v=1604873718\">\n                        <\/a>\n<\/div>\n                    <a alt=\"story link\" href=\"\/blogs\/stories\/abigail-schama-the-wrangle\"> <\/a>\n                <\/div>\n                <div class=\"flex-grid__item--33 product-story-image\"><img class=\"lazyload\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0499\/7916\/2781\/files\/hero-placeholder_92f03f7d-2807-4d27-955d-72fa6f2f1b33_500x500.png?v=1607911025\" alt=\"Abigail Schama\"><\/div>\n                <div class=\"flex-grid__item\">\n                    <hr class=\"hr--small-bottom\">\n                <\/div>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>"
-            }
-          },
-          "1592410318615": {
-            "type": "text-and-image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/bifu-headshot.png",
-              "image_width": 500,
-              "subtitle": "About",
-              "title": "Bifu Kimura",
-              "text": "<p>Bifu Kimura is a 9th generation Bizen potter in Inbe, Japan. His work balances dynamic, clean shapes with the rough textures of the Bizen firing process. Today he leads Studio Kibido with his daughter Mizuho Kimura and her husband, Yosuke.<\/p>",
-              "button_label": "",
-              "layout": "left"
-            }
-          },
-          "c6a9f61d-1fa1-4480-8699-444842332ac7": {
-            "type": "image-hero",
-            "settings": {
-              "parallax": false,
-              "title": "Bifu Kimura: A 9th Generation Potter Mastering the Way of the Shokunin",
-              "title_size": 55,
-              "subheading": "",
-              "link_text": "Read full story",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-left",
-              "image": "shopify:\/\/shop_images\/bifu-many-pots.png",
-              "focal_point": "center center",
-              "section_height": "750px",
-              "mobile_height": "auto"
-            }
-          },
-          "96890a06-5754-44bb-90e8-2368a406c1b5": {
-            "type": "featured-collection",
-            "settings": {
-              "title": "Shop Bifu's Work",
-              "collection": "bifu-kimura",
-              "per_row": 4,
-              "rows": 2,
-              "mobile_scrollable": true,
-              "view_all": true
-            }
-          }
-        },
-        "block_order": [
-          "fe724d64-c381-4479-8512-77728e69179d",
-          "1592410318615",
-          "c6a9f61d-1fa1-4480-8699-444842332ac7",
-          "96890a06-5754-44bb-90e8-2368a406c1b5"
-        ],
         "settings": {}
       },
       "page-sections-template": {
@@ -424,27 +367,6 @@
       },
       "collection-sidebar": {
         "type": "collection-sidebar",
-        "blocks": {
-          "1524772785241": {
-            "type": "subcollections",
-            "settings": {
-              "enable_subsubcollections": true,
-              "enable_count": false,
-              "collapsed": false
-            }
-          },
-          "1524772580942": {
-            "type": "tags_all",
-            "settings": {
-              "title": "Tags",
-              "collapsed": false
-            }
-          }
-        },
-        "block_order": [
-          "1524772785241",
-          "1524772580942"
-        ],
         "settings": {
           "enable_sidebar": false,
           "filter_style": "sidebar",
@@ -455,20 +377,20 @@
       "collection-promotions": {
         "type": "collection-promotions",
         "settings": {
-          "gutter_size": 20
+          "gutter_size": 0
         }
       },
       "footer-promotions": {
         "type": "footer-promotions",
         "settings": {
-          "hide_homepage": true,
+          "hide_homepage": false,
           "image_size": "wide"
         }
       },
       "product-recommendations": {
         "type": "product-recommendations",
         "settings": {
-          "show_product_recommendations": true,
+          "show_product_recommendations": false,
           "product_recommendations_heading": "You may also like",
           "related_count": 5
         }
@@ -476,7 +398,7 @@
       "recently-viewed": {
         "type": "recently-viewed",
         "settings": {
-          "show_section": true,
+          "show_section": false,
           "recent_count": 5
         }
       },
@@ -838,6 +760,12 @@
           "divider": false,
           "hide-mobile": false,
           "hide-desktop": false
+        }
+      },
+      "blog-sidebar": {
+        "type": "blog-sidebar",
+        "settings": {
+          "blog_links": "stories"
         }
       }
     },

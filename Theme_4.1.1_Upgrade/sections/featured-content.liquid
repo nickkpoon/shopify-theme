@@ -1,3 +1,5 @@
+<div class="page-width">
+
 {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
 
 <div class="text-{{ section.settings.align_text }}">
@@ -21,7 +23,7 @@
 
     {%- if section.settings.link_text != blank -%}
       <div class="rte">
-        <a href="{{ section.settings.link }}" class="btn">
+        <a href="{{ section.settings.link }}" class="btn" id="content_btn">
           {{ section.settings.link_text }}
         </a>
       </div>
@@ -49,9 +51,8 @@
     {%- endfor -%}
   </div>
 </div>
-
 {%- if section.settings.divider -%}</div>{%- endif -%}
-
+</div>
 {% schema %}
   {
     "name": "Rich text",

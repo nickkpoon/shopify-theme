@@ -3920,10 +3920,6 @@ form+.footer__social{
 
 @media only screen and (min-width:769px){
 
-.site-header{
-    padding:20px 0
-}
-
 .toolbar+.header-sticky-wrapper .site-header{
       border-top:1px solid;
       border-top-color:{{ settings.color_header_text | default: "#000" | color_modify: "alpha", 0.1 }}
@@ -4458,7 +4454,8 @@ form+.footer__social{
 .site-nav__item{
   position:relative;
   display:inline-block;
-  margin:0
+  margin:0;
+  font-family: var(--typeBaseSecondary);
 }
 
 .site-nav__item li{
@@ -4478,6 +4475,7 @@ form+.footer__social{
   white-space:nowrap;
   color:{{ settings.color_header_text | default: "#000" }};
   color:var(--colorNavText)
+  font-family: var(--typeBaseSecondary);
 }
 
 .site-header--heading-style .site-nav__link{
@@ -6663,6 +6661,9 @@ input[type=image]{
   }
   .hero--750px{
     height:750px;
+  }
+  .hero--900px{
+    height:900px;
   }
 }
 
@@ -11518,6 +11519,18 @@ html[dir=rtl] .product-single__meta .rte{
 }
 
 .btn {
+  font-family: 'AdelleSans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 165%;
+  /* identical to box height, or 20px */
+
+  text-align: center;
+  letter-spacing: 0.2em;
+}
+
+#content_btn {
   font-family: 'AdelleSans';
   font-style: normal;
   font-weight: normal;
