@@ -76,35 +76,157 @@
           </div>
         {%- endif -%}
 
-        <div class="grid__item {{ product_description_width }}">
+        <div class="grid__item {{ product_description_width }} product-meta-outer">
 
           <div class="product-single__meta">
             {%- if settings.show_breadcrumbs and isModal != true -%}
               {%- render 'breadcrumbs' -%}
             {%- endif -%}
 
-            {%- if settings.vendor_enable -%}
-              <div class="product-single__vendor">
-                {%- assign vendor_handle = product.vendor | handleize -%}
-                {%- if collections[vendor_handle] != empty -%}
+              {% comment %}
+                      {%- if settings.vendor_enable -%}
+                        <div class="product-single__vendor">
+                          {%- assign vendor_handle = product.vendor | handleize -%}
+                          {%- if collections[vendor_handle] != empty -%}
+                            <a href="{{ routes.collections_url }}/{{ collections[vendor_handle].handle }}">
+                              {{ collections[vendor_handle].title }}
+                            </a>
+                          {%- else -%}
+                            {{ product.vendor | link_to_vendor }}
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+
+                      {%- if isModal -%}
+                        <p class="h2 product-single__title">
+                          {{ product.title }}
+                        </p>
+                      {%- else -%}
+                        <h1 class="h2 product-single__title" style="text-transform:none;">
+                          {{ product.title }}
+                        </h1>
+                      {%- endif -%}
+
+              {% endcomment %}
+            <div class="product-details grid--no-gutters">
+
+<div class="product-top-container">
+              <div class="row">
+              {%- if isModal -%}
+                <p class="h2 product-single__title">
+                  {{ product.title }}
+                </p>
+              {%- else -%}
+                <h1 class="h2 product-single__title">
+                  {{ product.title }}
+                </h1>
+              {%- endif -%}
+              </div>
+
+
+              <div class="row">
+                <!-- fields [tls 10/19] -->
+                <div class="grid__item medium-up--one-half">
+                  <label>Maker</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half text-right">
+                  {%- assign vendor_handle = product.vendor | handleize  -%}
+                  {%- if collections[vendor_handle] != empty -%}
+
+                  <label>
                   <a href="{{ routes.collections_url }}/{{ collections[vendor_handle].handle }}">
                     {{ collections[vendor_handle].title }}
-                  </a>
-                {%- else -%}
-                  {{ product.vendor | link_to_vendor }}
-                {%- endif -%}
-              </div>
-            {%- endif -%}
+                    </a></label>
 
-            {%- if isModal -%}
-              <p class="h2 product-single__title">
-                {{ product.title }}
-              </p>
+                  {%- else -%}
+                  <label>{{ product.vendor | link_to_vendor }}</label>
+                  {%- endif -%}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="grid__item medium-up--one-half">
+                  <label>Location</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half  text-right">
+                  <label>{{ product.metafields.global.Product_City }}, {{ product.metafields.global.Product_Country }}</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="grid__item medium-up--one-half">
+                  <label>Material</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half  text-right">
+                  <label>{{ product.metafields.global.Product_Material }}</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="grid__item medium-up--one-half">
+                  <label>Dimensions</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half  text-right">
+                  <label>{{ product.metafields.global.Product_Dimensions }}</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="grid__item medium-up--one-half">
+                  <label>Weight</label>
+                </div>
+
+                <div class="grid__item medium-up--one-half  text-right">
+                  <label>{{ product.metafields.global.Product_Weight }}</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-bottom-container">
+
+            <!-- Form [tls 10/20] -->
+            {%- unless isModal -%}
+
+              {%- render 'product-form',
+                section_id: section_id,
+                product: product,
+                current_variant: current_variant
+              -%}
+
             {%- else -%}
-              <h1 class="h2 product-single__title" style="text-transform:none;">
-                {{ product.title }}
-              </h1>
-            {%- endif -%}
+              <div
+                id="ProductFormHolder-{{ section_id }}"
+                class="product-form-holder"
+                data-url="{{ product.url }}"
+                data-template="{{ product.template_suffix }}"></div>
+            {%- endunless -%}
+            <!-- Form -->
+
+
+            <!-- Commissions Request -->
+            <div class="shipping-product-info">
+              {%- if product.available != true -%}
+                <div class="soldout-contact-container">
+                <p>Sign up to get notified if a similar piece becomes available.</p>
+                {% render 'notified-form' %}
+                </div>
+              {%- else -%}
+                <p>Free shipping on orders over $150. <a href="#" class="accent-text shipping__btn js-modal-open-shipping-modal-{{ product.id }}" data-product-id="{{ product.id }}">See details.</a></p>
+             {%- endif -%}
+            </div>
+            </div>
+
+
+             {%- render 'contactus-popup', product: product -%}
+             {%- render 'shippingdetails-popup', product: product -%}
+
+             {%- render 'product-additional-content' -%}
 
             {%- if settings.enable_product_reviews and settings.reviews_layout == 'full' -%}
               {%- liquid
@@ -149,11 +271,6 @@
             {%- else -%}
               <span id="PriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
             {%- endif -%}
-
-            <span id="ProductPrice-{{ section_id }}"
-              class="product__price{% if current_variant.compare_at_price > current_variant.price %} on-sale{% endif %}">
-              {{ current_variant.price | money }}
-            </span>
 
             {%- if settings.product_save_amount -%}
               {%- if settings.product_save_type == 'dollar' -%}
@@ -236,10 +353,10 @@
               {%- endif -%}
             {%- endif -%}
 
-            <hr class="hr--medium">
+            {% comment %}
 
             {%- unless isModal -%}
-              {% comment %}
+            {% comment %}
                 Shopify's product form attaches a number of tracking
                 scripts that cause slower load times and false statistics.
                 Quick view modals request these on-demand.
@@ -263,6 +380,8 @@
                   <div class="placeholder-content" style="min-height: 86px;"></div>
                 </div>
             {%- endunless -%}
+
+            {% endcomment %}
 
             {%- unless isModal -%}
               {%- if settings.surface_pickup_enable -%}
@@ -289,6 +408,7 @@
                 </div>
               </div>
             {%- endif -%}
+    </div>
 
             {%- unless description_style == 'full' -%}
               <div class="product-single__description rte">
@@ -329,6 +449,14 @@
 
         {%- render 'product-additional-content', product: product, section_id: section_id -%}
       {%- endif -%}
+
+      <div class="clearfix"></div>
+
+        {%- render 'product-block-featured-collection' -%}
+
+
+        </div>
+
     </div>
   </div>
 </div>
