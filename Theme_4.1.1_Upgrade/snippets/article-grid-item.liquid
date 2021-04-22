@@ -5,20 +5,15 @@
 
 <div class="grid__item {{ grid_item_width }}" data-aos="row-of-{{ per_row }}">
   <div class="grid">
-    <div class="grid__item small--one-third">
+    <div class="grid__item medium-up--two-fifths">
       {%- if article.image -%}
         <a href="{{ article.url }}" class="article__grid-image" aria-label="{{ article.title | escape }}">
           {%- if fixed_aspect_ratio -%}
             <div class="image-wrap">
               <div
-                class="grid__image-ratio grid__image-ratio--{{ image_size }}">
-                {% assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-                <img class="lazyload"
-                    data-src="{{ img_url }}"
-                    data-widths="[360, 540, 720, 900, 1080]"
-                    data-aspectratio="{{ article.image.aspect_ratio }}"
-                    data-sizes="auto"
-                    alt="{{ article.image.alt | escape }}">
+                class="grid__image-ratio grid__image-ratio--cover grid__image-ratio--{{ image_size }} lazyload"
+                data-bgset="{% render 'bgset', image: article.image %}"
+                data-sizes="auto">
               </div>
               <noscript>
                 <img class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | escape }}">
@@ -30,6 +25,8 @@
               <img class="lazyload"
                   data-src="{{ img_url }}"
                   data-widths="[180, 360, 540, 720, 900, 1080]"
+                  width="540"
+                  height="{{ 540 | divided_by: article.image.aspect_ratio }}"
                   data-aspectratio="{{ article.image.aspect_ratio }}"
                   data-sizes="auto"
                   alt="{{ article.image.alt | escape }}">
@@ -44,14 +41,14 @@
           {%- if fixed_aspect_ratio -%}
             <div class="image-wrap">
               <div
-                class="grid__image-ratio grid__image-ratio--{{ image_size }} lazyload">
+                class="grid__image-ratio grid__image-ratio--cover grid__image-ratio--{{ image_size }} lazyload">
               </div>
             </div>
           {%- endif -%}
         </div>
       {%- endif -%}
     </div>
-    <div class="grid__item small--two-thirds">
+    <div class="grid__item medium-up--three-fifths">
       <div class="article__grid-meta">
         {%- if section.settings.blog_show_date or article.tags.size > 0 or articles.comments_count > 0 -%}
           <div class="article__date">
@@ -72,7 +69,7 @@
           </div>
         {%- endif -%}
 
-        <a href="{{ article.url }}" class="article__title">{{ article.title }}</a>
+        <a href="{{ article.url }}" class="h3">{{ article.title }}</a>
 
         {%- if section.settings.blog_show_author -%}
           <div class="article__author">by {{ article.author }}</div>
